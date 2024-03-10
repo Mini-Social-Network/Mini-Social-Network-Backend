@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="064979bb-5b95-435b-9ce8-025c61427178" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Auth-Service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/AuthServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/config/AppProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/config/WebMvcConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/exception/BadRequestException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/exception/OAuth2AuthenticationProcessingException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/exception/ResourceNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/model/AuthProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/payload/ApiResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/payload/AuthResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/payload/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/payload/SignUpRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/security/CurrentUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/security/CustomUserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/security/RestAuthenticationEntryPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/security/TokenAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/security/TokenProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/security/UserPrincipal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/security/oauth2/CustomOAuth2UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/security/oauth2/FacebookOAuth2UserInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/security/oauth2/GithubOAuth2UserInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/security/oauth2/GoogleOAuth2UserInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/security/oauth2/HttpCookieOAuth2AuthorizationRequestRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/security/oauth2/OAuth2AuthenticationFailureHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/security/oauth2/OAuth2AuthenticationSuccessHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/security/oauth2/OAuth2UserInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/security/oauth2/OAuth2UserInfoFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se/authservice/util/CookieUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/src/test/java/com/se/authservice/AuthServiceApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chat-Service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chat-Service/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chat-Service/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chat-Service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chat-Service/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chat-Service/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chat-Service/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se/chatservice/ChatServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chat-Service/src/test/java/com/se/chatservice/ChatServiceApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Comment-Service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Comment-Service/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Comment-Service/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Comment-Service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Comment-Service/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Comment-Service/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Comment-Service/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Comment-Service/src/main/java/com/se/commentservice/CommentServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Comment-Service/src/main/java/com/se/commentservice/domain/entity/Comment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Comment-Service/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Comment-Service/src/test/java/com/se/commentservice/CommentServiceApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/api-gateway.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/auth-service.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/eureka-service.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/forum-service-dev.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/forum-service.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/post-service-dev.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/post-service.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eureka-Service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eureka-Service/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eureka-Service/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eureka-Service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eureka-Service/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eureka-Service/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eureka-Service/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eureka-Service/src/main/java/com/se/eurekaservice/EurekaServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eureka-Service/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eureka-Service/src/test/java/com/se/eurekaservice/EurekaServiceApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Forum-Service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Forum-Service/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Forum-Service/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Forum-Service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Forum-Service/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Forum-Service/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Forum-Service/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Forum-Service/src/main/java/com/se/forumservice/ForumServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Forum-Service/src/main/java/com/se/forumservice/api/controller/ForumExternalController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Forum-Service/src/main/java/com/se/forumservice/api/controller/ForumInternalController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Forum-Service/src/main/java/com/se/forumservice/api/form/ForumCreateDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Forum-Service/src/main/java/com/se/forumservice/api/form/ForumDeleteDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Forum-Service/src/main/java/com/se/forumservice/api/form/ForumUpdateDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Forum-Service/src/main/java/com/se/forumservice/domain/db/read/RForumMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Forum-Service/src/main/java/com/se/forumservice/domain/db/read/RForumMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Forum-Service/src/main/java/com/se/forumservice/domain/db/write/WForumMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Forum-Service/src/main/java/com/se/forumservice/domain/db/write/WForumMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Forum-Service/src/main/java/com/se/forumservice/domain/entity/Forum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Forum-Service/src/main/java/com/se/forumservice/domain/repository/ForumRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Forum-Service/src/main/java/com/se/forumservice/domain/service/ForumService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Forum-Service/src/main/java/com/se/forumservice/util/Util.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Forum-Service/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Forum-Service/src/test/java/com/se/forumservice/ForumServiceApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/api/externalApi/ExternalApiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/api/form/ApiResponseEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/api/form/LoginMemberRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/api/form/RegisMemberRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/api/internalApi/InternalApiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/api/webApi/webApiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/domain/db/read/RMemberMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/domain/db/read/RMemberMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/domain/db/read/RRefreshTokenMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/domain/db/read/RRefreshTokenMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/domain/db/read/RVerificationMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/domain/db/read/RVerificationMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/domain/dto/DeleteConditionDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/domain/dto/InsertConditionDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/domain/dto/MemberDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/domain/dto/SelectConditionDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/domain/dto/UpdateConditionDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/domain/entity/AuthProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/domain/entity/RefreshToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/domain/repository/RefreshTokenRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/domain/repository/VerificationRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/domain/service/RefreshTokenService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/domain/service/VerificationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Member-Service/src/test/java/com/se/memberservice/MemberServiceApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se/postservice/api/form/ApiResponseEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se/postservice/api/form/PostRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se/postservice/api/form/deletePostRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se/postservice/api/form/selectPostRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se/postservice/api/form/updatePostRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se/postservice/api/internalApi/InternalApiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se/postservice/api/webApi/WebApiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se/postservice/domain/dto/DeleteConditionDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se/postservice/domain/dto/InsertConditionDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se/postservice/domain/dto/SelectConditionDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se/postservice/domain/dto/UpdateConditionDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se/postservice/domain/entity/Like.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se/postservice/domain/entity/Post.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se/postservice/domain/repository/PostRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se/postservice/domain/service/CallApiService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se/postservice/domain/service/PostService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se/postservice/domain/service/impl/PostServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/System-Service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/System-Service/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/System-Service/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/System-Service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/System-Service/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/System-Service/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/System-Service/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se/systemservice/SystemServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/System-Service/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/System-Service/src/test/java/com/se/systemservice/SystemServiceApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Thread-Service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Thread-Service/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Thread-Service/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Thread-Service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Thread-Service/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Thread-Service/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Thread-Service/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Thread-Service/src/main/java/com/se/threadservice/ThreadServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Thread-Service/src/main/java/com/se/threadservice/domain/entity/Thread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Thread-Service/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Thread-Service/src/test/java/com/se/threadservice/ThreadServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Mini-Social-Network-Backend.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config-Service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Config-Service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config-Service/src/main/java/com/se/configservice/ConfigServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Config-Service/src/main/java/com/se/configservice/ConfigServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config-Service/src/main/resources/config/member-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/member-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Member-Service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Member-Service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/api/internalApi/MemberController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/domain/entity/Authorization.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/domain/entity/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/domain/entity/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/domain/entity/Verification.java" beforeDir="false" afterPath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/domain/entity/Verification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/domain/request/dto/MemberLoginRequestDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/domain/request/dto/MemberRegisRequestDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/domain/service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/domain/service/MemberService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/domain/service/impl/MemberServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/domain/service/impl/MemberServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Member-Service/src/main/java/com/se/memberservice/model/db/read/GetMemberMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Member-Service/src/test/java/com/se1/memberservice/MemberServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Post-Service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Post-Service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Post-Service/src/main/java/com/se/postservice/PostServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se/postservice/PostServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Post-Service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/ApiGateway-Service">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/Auth-Service">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/Chat-Service">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/Comment-Service">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/Config-Service">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/Eureka-Service">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/Forum-Service">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/Member-Service">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/Post-Service">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/System-Service">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/Thread-Service">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2dQlwVN3KmNaAy6SdY3ZQpSKO14" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="064979bb-5b95-435b-9ce8-025c61427178" name="Default Changelist" comment="" />
+      <created>1709948433031</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1709948433031</updated>
+      <workItem from="1709948437532" duration="677000" />
+      <workItem from="1710069548555" duration="213000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
