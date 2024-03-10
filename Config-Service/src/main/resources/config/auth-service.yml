@@ -1,6 +1,6 @@
 eureka:
   instance:
-    preferIpAddress: true
+    preferIpAddress: true 
   client:
     registerWithEureka: true
     fetchRegistry : true
@@ -9,7 +9,7 @@ eureka:
 
 server:
   port: 8089
-
+  
 spring:
   application:
     name: auth-service
@@ -82,4 +82,3 @@ management:
     enabled-by-default: true
 
 
-    
