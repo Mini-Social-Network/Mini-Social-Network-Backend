@@ -12,6 +12,20 @@ services:
       - ./init:/docker-entrypoint-initdb.d
     networks:
       - social
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: rabbitmq-forum
+    ports: 
+      - 5672:5672
+      - 15672:15672
+    volumes:
+      - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+      - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: "admin"
+      RABBITMQ_DEFAULT_PASS: "admin"
+    networks:
+      - social
 
 networks:
   social: 

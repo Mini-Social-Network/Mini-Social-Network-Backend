@@ -95,8 +95,11 @@ public class PostExternalController {
 	@GetMapping("/findAllPost")
 	public ResponseEntity<?> findAll() throws JsonMappingException, JsonProcessingException{
 
-//		GetPostResponseDto getPostResponseDto = mapper.readValue(postDummy1, GetPostResponseDto.class);
-//		getPostResponseDto.setContext(context);
+                return this.okResponse(mapper.readValue(postDummy1, Object.class), null);
+	}
+
+	@GetMapping("/find-post")
+	public ResponseEntity<?> findPostBySlug(@RequestParam ("post_id") Integer postId) throws JsonMappingException, JsonProcessingException{
 		
 		return this.okResponse(mapper.readValue(postDummy1, Object.class), null);
 	}
