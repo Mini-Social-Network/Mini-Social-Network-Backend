@@ -1,4 +1,4 @@
-package com.se1.userservice.model;
+package com.se1.commentservice.domain.entity;
 
 import java.util.Date;
 
@@ -15,20 +15,24 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "ratings")
-public class Rating {
+@Table(name="comment_like")
+public class Like {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	private Long userRatedId;
-	
-	private Long userRatingId;
-	
-	private int rating;
-	
+	private Integer id;
+
+	@Column(nullable = false)
+	private Integer postId;
+
+	@Column(nullable = false)
+	private Integer userId;
+
+	@Column(nullable = false)
+	private Byte status; // 1: like, 2: dislike
+
 	@Column(nullable = false)
 	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private Date createAt;
+
 }
