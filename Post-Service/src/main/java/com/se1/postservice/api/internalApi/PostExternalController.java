@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -95,12 +96,12 @@ public class PostExternalController {
 	@GetMapping("/findAllPost")
 	public ResponseEntity<?> findAll() throws JsonMappingException, JsonProcessingException{
 
-                return this.okResponse(mapper.readValue(postDummy1, Object.class), null);
+		return this.okResponse(mapper.readValue(postDummy1, Object.class), null);
 	}
-
+	
 	@GetMapping("/find-post")
 	public ResponseEntity<?> findPostBySlug(@RequestParam ("post_id") Integer postId) throws JsonMappingException, JsonProcessingException{
-		
+
 		return this.okResponse(mapper.readValue(postDummy1, Object.class), null);
 	}
 	
