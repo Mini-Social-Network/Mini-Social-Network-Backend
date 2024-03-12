@@ -1,4 +1,4 @@
-package com.se1.postservice.domain.payload;
+package com.se1.commentservice.domain.payload;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

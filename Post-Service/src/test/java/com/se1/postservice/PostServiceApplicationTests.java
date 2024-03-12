@@ -53,47 +53,14 @@ class PostServiceApplicationTests {
 		userPost.setRatingCount(4.3);
 		userPost.setTopicId(UUID.randomUUID().toString());
 		getPostResponseDto.setUser(userPost);
-		
-		GetPostResponseDto.Comment comment1 = new GetPostResponseDto().new Comment();
-		comment1.setId(1);
-		comment1.setText("MU GOAT");
-		comment1.setLikeCount(15);
-		comment1.setDisLikeCount(1);
-		comment1.setCommentChildCount(2);
-		comment1.setCreateAt(new Date());
-
-		GetPostResponseDto.User userComment1 = new GetPostResponseDto().new User();
-		userComment1.setId(2);
-		userComment1.setName("bruno fernander");
-		userComment1.setEmail("brunofernander@gmail.com");
-		userComment1.setImageUrl("https://i.pinimg.com/736x/30/b5/49/30b54999b098050158ed13a1ecdcaab0.jpg");
-		userComment1.setIsExpert(false);
-		userComment1.setRatingCount(null);
-		userComment1.setTopicId(UUID.randomUUID().toString());
-		comment1.setUser(userComment1);
-		
-		GetPostResponseDto.Comment comment2 = new GetPostResponseDto().new Comment();
-		comment2.setId(2);
-		comment2.setText("MU top 1");
-		comment2.setLikeCount(5);
-		comment2.setDisLikeCount(1);
-		comment2.setCommentChildCount(2);
-		comment2.setCreateAt(new Date());
-
-		GetPostResponseDto.User userComment2 = new GetPostResponseDto().new User();
-		userComment2.setId(3);
-		userComment2.setName("harry maguire");
-		userComment2.setEmail("harrymaguire2@gmail.com");
-		userComment2.setImageUrl("https://i.pinimg.com/736x/30/b5/49/30b54999b098050158ed13a1ecdcaab0.jpg");
-		userComment2.setIsExpert(false);
-		userComment2.setRatingCount(null);
-		userComment2.setTopicId(UUID.randomUUID().toString());
-		comment2.setUser(userComment2);
-		
-		getPostResponseDto.setComment(List.of(comment1,comment2));
 		getPostResponseDto.setPublishAt(new Date());
 		
 		String jsonResponse = objectMapper.writeValueAsString(getPostResponseDto);
+	}
+
+	@Test
+	public void test1() {
+		PriorityQueue<GetPostResponseDto> priorityQueue = new PriorityQueue<>();
 	}
 
 }

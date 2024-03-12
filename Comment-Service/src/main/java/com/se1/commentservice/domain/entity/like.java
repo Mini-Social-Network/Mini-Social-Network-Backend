@@ -21,18 +21,18 @@ public class Like {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-
+	
 	@Column(nullable = false)
-	private Integer postId;
-
+	private Integer commentId;
+	
 	@Column(nullable = false)
 	private Integer userId;
-
+		
 	@Column(nullable = false)
 	private Byte status; // 1: like, 2: dislike
-
+	
 	@Column(nullable = false)
 	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private Date createAt;
-
+	
 }
