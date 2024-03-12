@@ -3,8 +3,9 @@ package com.se1.userservice.payload;
 import java.time.LocalDate;
 import java.util.Date;
 
-import lombok.Data;
 import com.fasterxml.jackson.annotation.JsonFormat;
+
+import lombok.Data;
 
 @Data
 public class UserDto {

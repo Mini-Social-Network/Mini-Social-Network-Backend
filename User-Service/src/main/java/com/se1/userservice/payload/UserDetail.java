@@ -1,4 +1,4 @@
-package com.se1.authservice.payload;
+package com.se1.userservice.payload;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,5 +16,5 @@ public class UserDetail {
 	private String role;
 	private boolean isExpert;
 	private Double rating;
-	private int status;
+	private Byte status;
 }
