@@ -16,17 +16,19 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.se1.systemservice.common.utils.CommonUtils;
 import com.se1.systemservice.config.MqConfig;
 import com.se1.systemservice.config.SCMConstant;
-import com.se1.systemservice.payload.ChatMqRequest;
-import com.se1.systemservice.payload.ChatRequest;
-import com.se1.systemservice.service.CommonService;
-import com.se1.systemservice.service.UserContactService;
-import com.se1.systemservice.service.WebsocketService;
+import com.se1.systemservice.config.WebSocketSessionListener;
+import com.se1.systemservice.domain.common.utils.CommonUtils;
+import com.se1.systemservice.domain.payload.ChatMqRequest;
+import com.se1.systemservice.domain.payload.ChatRequest;
+import com.se1.systemservice.domain.service.CommonService;
+import com.se1.systemservice.domain.service.UserContactService;
+import com.se1.systemservice.domain.service.WebsocketService;
+
+import lombok.extern.slf4j.Slf4j;
 
 @Controller
-@RequestMapping("/system/ws")
 public class WebsocketController {
 
 	@Autowired
@@ -42,14 +44,16 @@ public class WebsocketController {
 	private RabbitTemplate rabbitTemplate;
 	
 	@Autowired
-	private ObjectMapper objectMapper;
+	private WebSocketSessionListener webSocketSessionListener;
 	
 	@MessageMapping("/chat/{topicId}")
 	public void sendChat(@RequestHeader(required = false, name = "user_detail") String userDetail,
 			@DestinationVariable String topicId, ChatRequest request) throws Exception {
+		
+		String userId = webSocketSessionListener.getConnectedClientId().get(0);
 		String content = request.getContent();
 		String contentToMQ = content;
-		if (request.isFile()) {
+		if (request.getIsFile()) {
 			String[] contentArray = content.split(",");
 
 			String imageName = CommonUtils.getFileName(contentArray[0].split("/")[1]);
@@ -57,49 +61,17 @@ public class WebsocketController {
 			InputStream inputStream = new ByteArrayInputStream(imageByte);
 
 			contentToMQ = imageName;
-			commonService.saveFile("/chat", imageName, inputStream);
+			commonService.saveFile(imageName, inputStream);
 		}
 		
-		Map<String, Object> map = new HashMap<>();
-		map.put("content", contentToMQ);
-		map.put("topicId", topicId);
-		map.put("chatParent", null);
-		
-		
 		ChatMqRequest mqRequest = new ChatMqRequest();
-		mqRequest.setAction(SCMConstant.MQ_REQUEST_CHAT_ACTION_CREATE);
-		mqRequest.setRecord(map);
+		mqRequest.setChatParentId(request.getChatParent());
+		mqRequest.setContent(contentToMQ);
+		mqRequest.setUserId(Long.parseLong(userId));
+		mqRequest.setTopicId(topicId);
+		mqRequest.setIsFile(request.getIsFile());
 		
-		rabbitTemplate.convertAndSend(MqConfig.CHAT_EXCHANGE, MqConfig.CHAT_ROUTING_KEY, mqRequest);
-
-		websocketService.sendMessageChat(topicId, request);
+		rabbitTemplate.convertAndSend(MqConfig.CHAT_EXCHANGE, MqConfig.CHAT_ROUTING_KEY_CREATE, mqRequest);
 	}
 
-	@MessageMapping("/comment/{topicId}")
-	public void sendComment() {
-
-	}
-
-	@MessageMapping("/contact/{topicId}")
-	public void sendContact(@DestinationVariable String topicId, ChatRequest request) {
-		websocketService.sendContact(topicId, request);
-	}
-
-	@MessageMapping("/user/{topicId}")
-	public void sendUser(@DestinationVariable String topicId, ChatRequest request) {
-
-		websocketService.sendContact(topicId, request);
-	}
-
-	@MessageMapping("/userContact/{userId}")
-	public void updateUserContact(@DestinationVariable Integer userId, String action) {
-		boolean isChoose = action.equals("CONNECT");
-		System.out.println(userId + "/" + action);
-		contactService.updateUserChoose(userId, isChoose);
-	}
-	@MessageMapping("/user/54f2e54b-f4fb-4f1e-8358-624a2f4017d7")
-	public void sendPrivateUser(@Payload ChatRequest request) {
-		System.out.println(request);
-		websocketService.sendMessageChat("54f2e54b-f4fb-4f1e-8358-624a2f4017d7", request);
-	}
 }

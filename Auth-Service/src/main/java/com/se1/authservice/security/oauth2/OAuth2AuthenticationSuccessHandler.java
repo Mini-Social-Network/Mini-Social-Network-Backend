@@ -11,6 +11,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
@@ -25,7 +26,7 @@ import com.se1.authservice.payload.AuthResponse;
 import com.se1.authservice.payload.UserDetail;
 import com.se1.authservice.security.TokenProvider;
 import com.se1.authservice.security.UserPrincipal;
-import com.se1.authservice.service.UserService;
+import com.se1.authservice.service.UserDetailService;
 import com.se1.authservice.util.CookieUtils;
 
 import io.jsonwebtoken.security.InvalidKeyException;
@@ -36,7 +37,7 @@ public class OAuth2AuthenticationSuccessHandler extends SimpleUrlAuthenticationS
 	public static final String REDIRECT_URI_PARAM_COOKIE_NAME = "redirect_uri";
 
 	private TokenProvider tokenProvider;
-	private UserService userService;
+	private UserDetailService userService;
 	private AppProperties appProperties;
 
 	private HttpCookieOAuth2AuthorizationRequestRepository httpCookieOAuth2AuthorizationRequestRepository;
@@ -82,8 +83,8 @@ public class OAuth2AuthenticationSuccessHandler extends SimpleUrlAuthenticationS
 		} catch (JsonProcessingException e1) {
 			e1.printStackTrace();
 		}
-		UserDetail userDetail = new UserDetail(user.getId(), user.getEmail(), user.getName(), user.getImageUrl(),
-				user.getRole(), user.getIsExpert(), user.getRating(), user.getStatus());
+		UserDetail userDetail = new UserDetail();
+		BeanUtils.copyProperties(user, userDetail);
 		AuthResponse authResponse = null;
 		try {
 			authResponse = tokenProvider.createToken(userPrincipal.getEmail(), userDetail);

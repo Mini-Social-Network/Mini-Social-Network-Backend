@@ -10,27 +10,71 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class MqConfig {
-	public static final String QUEUE = "Notification-Queue";
-    public static final String EXCHANGE = "Notification-Exchange";
-    public static final String ROUTING_KEY = "Notification-Routing-Key";
-
-
-    @Bean
-    public Queue queue() {
-        return new Queue(QUEUE);
+	public static final String Notification_QUEUE = "Notification-Queue";
+    public static final String Notification_EXCHANGE = "Notification-Exchange";
+    public static final String Notification_ROUTING_KEY = "Notification-Routing-Key";
+    public static final String USER_EXCHANGE = "User-Exchange";
+	public static final String USER_QUEUE = "User-Queue";
+	public static final String USER_ROUTING_KEY = "User-Routing-Key";
+	public static final String SYSTEM_EXCHANGE = "System-Exchange";
+	public static final String SYSTEM_QUEUE = "System-Queue";
+	public static final String SYSTEM_ROUTING_KEY = "System-Routing-Key";
+    
+	// Notification
+	@Bean
+    public Queue queueNotification() {
+        return new Queue(Notification_QUEUE);
     }
 
     @Bean
-    public TopicExchange exchange() {
-        return new TopicExchange(EXCHANGE);
+    public TopicExchange exchangeNotification() {
+        return new TopicExchange(Notification_EXCHANGE);
     }
 
     @Bean
-    public Binding bindings(Queue queue, TopicExchange topicExchange) {
+    public Binding bindingsNotification() {
         return BindingBuilder
-                .bind(queue)
-                .to(topicExchange)
-                .with(ROUTING_KEY);
+                .bind(queueNotification())
+                .to(exchangeNotification())
+                .with(Notification_ROUTING_KEY);
+    }
+    
+    //USER
+    @Bean
+    public Queue queueUser() {
+        return new Queue(USER_QUEUE);
+    }
+
+    @Bean
+    public TopicExchange exchangeUser() {
+        return new TopicExchange(USER_EXCHANGE);
+    }
+
+    @Bean
+    public Binding bindingsUser() {
+        return BindingBuilder
+                .bind(queueUser())
+                .to(exchangeUser())
+                .with(USER_ROUTING_KEY);
+    }
+    
+    //SYSTEM
+    @Bean
+    public Queue queueSystem() {
+        return new Queue(SYSTEM_QUEUE);
+    }
+
+    @Bean
+    public TopicExchange exchangeSystem() {
+        return new TopicExchange(SYSTEM_EXCHANGE);
+    }
+
+    @Bean
+    public Binding bindingsSystem() {
+        return BindingBuilder
+                .bind(queueSystem())
+                .to(exchangeSystem())
+                .with(SYSTEM_EXCHANGE);
     }
 
     @Bean

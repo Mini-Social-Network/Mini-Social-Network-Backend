@@ -131,4 +131,9 @@ public class ContactService {
 		}
 	}
 
+	public void processGetListFriend(UserDetail userDetail) {
+		// TODO Auto-generated method stub
+
+	}
+
 }

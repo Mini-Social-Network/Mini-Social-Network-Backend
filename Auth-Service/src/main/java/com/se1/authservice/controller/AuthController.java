@@ -1,5 +1,6 @@
 package com.se1.authservice.controller;
 
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -9,7 +10,10 @@ import java.util.stream.Collectors;
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -36,21 +40,23 @@ import com.se1.authservice.model.User;
 import com.se1.authservice.payload.ApiResponseEntity;
 import com.se1.authservice.payload.AuthResponse;
 import com.se1.authservice.payload.LoginRequest;
+import com.se1.authservice.payload.MailRequest;
 import com.se1.authservice.payload.SignUpRequest;
 import com.se1.authservice.payload.SignUpResponseDto;
 import com.se1.authservice.payload.UserDetail;
 import com.se1.authservice.payload.UserResponseDto;
+import com.se1.authservice.payload.UserResponseForClient;
 import com.se1.authservice.security.TokenProvider;
 import com.se1.authservice.security.UserPrincipal;
-import com.se1.authservice.service.UserService;
-import com.se1.authservice.util.UserServiceRestTemplateClient;
+import com.se1.authservice.service.UserDetailService;
+import com.se1.authservice.util.UserService;
 
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
 
 	@Autowired
-	UserService service;
+	UserDetailService service;
 
 	@Autowired
 	private PasswordEncoder passwordEncoder;
@@ -64,6 +70,11 @@ public class AuthController {
 	@Autowired
 	private AuthenticationManager authenticationManager;
 
+	private 
+	
+	@Value("${front-end.url.login}")
+	String urlFronEnd;
+	
 	@PostMapping("/login")
 	public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 		String email = loginRequest.getEmail();
@@ -86,8 +97,8 @@ public class AuthController {
 
 				UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
 
-				UserDetail userDetail = new UserDetail(user.getId(), user.getEmail(), user.getName(),
-						user.getImageUrl(), user.getRole(), user.getIsExpert(), user.getRating(), user.getStatus());
+				UserDetail userDetail = new UserDetail();
+				BeanUtils.copyProperties(user, userDetail);
 				AuthResponse authResponse = tokenProvider.createToken(userPrincipal.getEmail(), userDetail);
 				return this.okResponse(authResponse);
 			} catch (Exception e) {
@@ -99,6 +110,11 @@ public class AuthController {
 
 	}
 
+	@GetMapping("/verify-email")
+	public ResponseEntity<?> verifyEmail(@RequestParam("token") String token){
+		return ResponseEntity.status(HttpStatus.FOUND).location(URI.create(urlFronEnd)).build();
+	}
+	
 	@PostMapping("/getUserInfoByToken")
 	public ResponseEntity<?> getUserEmailByToken(@RequestHeader("Authorization") String token) {
 		Boolean isTokenValid = tokenProvider.validateToken(token);
@@ -113,9 +129,8 @@ public class AuthController {
 			if (user == null) {
 				return this.badResponse(List.of("User not found"));
 			}
-			UserDetail userDetail = new UserDetail(user.getId(), user.getEmail(), user.getName(),
-					user.getImageUrl(), user.getRole(), user.getIsExpert (), user.getRating(), user.getStatus());
-
+			UserResponseForClient userDetail = new UserResponseForClient();
+			BeanUtils.copyProperties(user, userDetail);
 			return this.okResponse(userDetail);
 		} catch (JsonProcessingException e) {
 			return this.badResponse(List.of(e.getMessage()));
@@ -151,7 +166,12 @@ public class AuthController {
 
 			SignUpResponseDto signUpResponseDto = new SignUpResponseDto();
 			if (result != null) {
-				// TODO SEND verifyEmail
+				MailRequest mailRequest = new MailRequest();
+				mailRequest.setMailTemplate("signup-template");
+				mailRequest.setTo(result.getEmail());
+				
+				service.sendMail(result.getId(),result.getEmail(),result.getName());
+				
 				signUpResponseDto.setMessage(List.of("Please check your email to login"));
 				signUpResponseDto.setSignUp(true);
 			} else {
@@ -172,7 +192,7 @@ public class AuthController {
 
 		// TODO check email
 		// TODO check name
-		// TODO chech password
+		// TODO check password
 
 		if (!signUpRequest.getPassword().equals(signUpRequest.getConfirmPassword())) {
 			errors.add("ConfirmPassword not work");
