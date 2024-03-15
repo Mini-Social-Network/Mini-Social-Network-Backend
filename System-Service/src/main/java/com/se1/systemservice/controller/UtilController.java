@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.se1.systemservice.common.utils.CommonUtils;
-import com.se1.systemservice.service.CommonService;
+import com.se1.systemservice.domain.common.utils.CommonUtils;
+import com.se1.systemservice.domain.service.CommonService;
 
 @RestController
-@RequestMapping("/system")
+@RequestMapping("/system/internal")
 public class UtilController {
 	
 	@Autowired
@@ -30,7 +30,7 @@ public class UtilController {
 		byte[] imageByte = Base64.getDecoder().decode(imageBase64[1].trim());
 		InputStream inputStream = new ByteArrayInputStream(imageByte);
 		
-		commonService.saveFile("/chat", imageName, inputStream);
+		commonService.saveFile(imageName, inputStream);
 		return imageName;
     }
 }

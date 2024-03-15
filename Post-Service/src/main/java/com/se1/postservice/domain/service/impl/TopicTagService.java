@@ -2,19 +2,30 @@ package com.se1.postservice.domain.service.impl;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
-import java.util.LinkedHashMap;
+import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.BeanWrapper;
+import org.springframework.beans.BeanWrapperImpl;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.se1.postservice.domain.db.read.RTopicTagMapper;
 import com.se1.postservice.domain.db.write.WTopicTagMapper;
 import com.se1.postservice.domain.entity.TopicTag;
-import com.se1.postservice.domain.payload.TopicTagRequest;
+import com.se1.postservice.domain.payload.ApiResponseEntity;
+import com.se1.postservice.domain.payload.CreateTopicTagRequest;
+import com.se1.postservice.domain.payload.UpdateTopicTagRequest;
+import com.se1.postservice.domain.payload.UserDetail;
+import com.se1.postservice.domain.payload.dto.TopicTagResponse;
 import com.se1.postservice.domain.repository.TopicTagRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -25,27 +36,8 @@ public class TopicTagService {
 
 	private final TopicTagRepository topicTagRepository;
 	private final ObjectMapper objectMapper;
-	private final WTopicTagMapper wTopicTagMapper;
+	private final RTopicTagMapper rTopicTagMapper;
 	
-	public TopicTag findById(Integer propertyTagId) {
-		return topicTagRepository.findById(propertyTagId).get();
-	}
-
-	public List<String> validation(TopicTagRequest propertyTagRequest) {
-		// TODO Auto-generated method stub
-		return List.of();
-	}
-
-	public TopicTag savePropertyTag(TopicTag propertyTag) {
-		return topicTagRepository.save(propertyTag);
-	}
-
-	public boolean updateById(TopicTag propertyTag) throws JsonProcessingException {
-		String updateCondition = createQueryUpdate(propertyTag);
-		int updateStatus = wTopicTagMapper.updateTopicTag(updateCondition);
-		return updateStatus > 0;
-	}
-
 	private String createQueryUpdate(TopicTag propertyTag) throws JsonProcessingException {
 		String queryUpdate = "";
 		queryUpdate += " SET ";
@@ -107,4 +99,67 @@ public class TopicTagService {
  
         return result;
     }
+
+	public void processCreate(CreateTopicTagRequest topicTagRequest, UserDetail userDetail, ApiResponseEntity apiResponseEntity) throws Exception {
+		String userRole = userDetail.getRole();
+		if(userRole.equals("admin") || userRole.equals("expert")) {
+			TopicTag topicTag = new TopicTag();
+			BeanUtils.copyProperties(topicTagRequest, topicTag);
+			
+			topicTag.setCreateAt(new Date());
+			topicTag.setUpdateAt(new Date());
+			topicTag.setDelFlg(new Byte("0"));
+			topicTag.setUserUpdate(userDetail.getEmail());
+			topicTag.setUserCreate(userDetail.getEmail());
+			
+			topicTagRepository.save(topicTag);
+			apiResponseEntity.setData(true);
+			apiResponseEntity.setErrorList(null);
+			apiResponseEntity.setStatus(1);
+		}else {
+			throw new Exception("Không có quyền tạo thẻ thuộc tính");
+		}
+		
+	}
+
+	public void processUpdate(UpdateTopicTagRequest topicTagRequest, UserDetail userDetail,
+			ApiResponseEntity apiResponseEntity) throws Exception {
+		String userRole = userDetail.getRole();
+		if(userRole.equals("admin") || userRole.equals("expert")) {
+			TopicTag topicTag = topicTagRepository.findById(topicTagRequest.getId()).get();
+			BeanUtils.copyProperties(topicTagRequest, topicTag, getNullPropertyNames(topicTagRequest));
+			
+			topicTag.setUpdateAt(new Date());
+			topicTag.setUserUpdate(userDetail.getEmail());
+			
+			topicTagRepository.save(topicTag);
+			apiResponseEntity.setData(true);
+			apiResponseEntity.setErrorList(null);
+			apiResponseEntity.setStatus(1);
+		}else {
+			throw new Exception("Không có quyền cập nhật thẻ thuộc tính");
+		}
+	}
+	
+	public static String[] getNullPropertyNames (Object source) {
+	    final BeanWrapper src = new BeanWrapperImpl(source);
+	    java.beans.PropertyDescriptor[] pds = src.getPropertyDescriptors();
+
+	    Set<String> emptyNames = new HashSet<String>();
+	    for(java.beans.PropertyDescriptor pd : pds) {
+	        Object srcValue = src.getPropertyValue(pd.getName());
+	        if (srcValue == null) emptyNames.add(pd.getName());
+	    }
+
+	    String[] result = new String[emptyNames.size()];
+	    return emptyNames.toArray(result);
+	}
+
+	public void processGetAllTopicTag(String tagName,
+			ApiResponseEntity apiResponseEntity) throws JsonMappingException, JsonProcessingException {
+		List<TopicTagResponse> getAllTopicTag = rTopicTagMapper.findAllByName(tagName);
+		apiResponseEntity.setData(getAllTopicTag);
+		apiResponseEntity.setErrorList(null);
+		apiResponseEntity.setStatus(1);
+	}
 }
