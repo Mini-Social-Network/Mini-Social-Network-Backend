@@ -5,324 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99f97707-0ba5-43b0-aa3d-fb03e8706718" name="Default Changelist" comment="add dto for comment service">
-      <change afterPath="$PROJECT_DIR$/ApiGateway-Service/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se1/authservice/config/AuthServiceConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se1/authservice/config/UrlConstance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se1/authservice/payload/MailRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se1/authservice/payload/UserResponseForClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se1/authservice/service/CallApiService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se1/authservice/service/UserDetailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se1/authservice/util/SystemServiceRestTemplate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se1/authservice/util/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se1/authservice/util/VerifyService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth-Service/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/config/ChatServiceConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/config/SCMConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/config/UrlConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/controller/ChatController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/controller/ChatExternalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/domain/common/CommonUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/domain/db/dto/ChatDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/domain/db/read/RChatMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/domain/db/read/RChatMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/domain/db/write/WChatMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/domain/db/write/WChatMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/domain/restclient/UserServiceRestTemplateClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/model/Chat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/payload/ApiResponseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/payload/ChatDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/payload/ContactDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/payload/CreateChatRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/payload/GetAllChatRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/payload/RabbitRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/payload/UpdateChatRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/payload/UserDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/payload/UserDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/repository/ChatRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/service/CallApiService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/service/ChatService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/service/ContactService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/chat-service.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/notify-service.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Eureka-Service/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notify-Service/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notify-Service/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notify-Service/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notify-Service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notify-Service/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notify-Service/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notify-Service/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notify-Service/src/main/java/com/se1/notifyservice/NotifyServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notify-Service/src/main/java/com/se1/notifyservice/config/MqConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notify-Service/src/main/java/com/se1/notifyservice/config/NotifyServiceConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notify-Service/src/main/java/com/se1/notifyservice/config/SCMConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notify-Service/src/main/java/com/se1/notifyservice/controller/NotifyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notify-Service/src/main/java/com/se1/notifyservice/domain/dto/NotifyDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notify-Service/src/main/java/com/se1/notifyservice/domain/model/Notify.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notify-Service/src/main/java/com/se1/notifyservice/domain/payload/ApiResponseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notify-Service/src/main/java/com/se1/notifyservice/domain/payload/NotifyResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notify-Service/src/main/java/com/se1/notifyservice/domain/payload/UserDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notify-Service/src/main/java/com/se1/notifyservice/domain/rabbitMQ/NotifyListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notify-Service/src/main/java/com/se1/notifyservice/domain/rabbitMQ/dto/NotifyDtoRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notify-Service/src/main/java/com/se1/notifyservice/domain/rabbitMQ/dto/RabbitRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notify-Service/src/main/java/com/se1/notifyservice/domain/repository/NotifyRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notify-Service/src/main/java/com/se1/notifyservice/domain/restclient/UserServiceRestTemplateClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notify-Service/src/main/java/com/se1/notifyservice/domain/service/CallApiService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notify-Service/src/main/java/com/se1/notifyservice/domain/service/NotifyListenerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notify-Service/src/main/java/com/se1/notifyservice/domain/service/NotifyService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notify-Service/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notify-Service/src/test/java/com/se1/notifyservice/NotifyServiceApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/common/AppConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/common/MqConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/common/SCMConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/config/PostServiceConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/controller/CommentExternalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/controller/PostExternalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/controller/PostInternalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/controller/TopicTagInternalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/db/dto/PostDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/db/read/RTopicTagMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/db/read/RTopicTagMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/entity/Comment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/entity/CommentLike.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/entity/PostLike.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/payload/ContactDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/payload/CreateCommentRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/payload/CreateCommentResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/payload/CreateTopicTagRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/payload/NotifycationDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/payload/RegisCommentRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/payload/SubscribeDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/payload/UpdateTopicTagRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/payload/WebsocketResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/payload/dto/TopicTagResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/payload/request/FindPostRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/repository/CommentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/service/CallApiService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/service/impl/CommentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/util/CommonUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/util/SystemServiceRestTemplateClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/util/UserServiceRestTemplateClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Post-Service/src/test/java/com/se1/postservice/PostServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/config/MvcConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/config/SystemServiceConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/config/WebSocketSessionListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/config/WebsocketMessageBrokerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/domain/common/utils/CommonUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/domain/model/Mail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/domain/payload/ApiResponseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/domain/payload/ChatDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/domain/payload/ChatMqRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/domain/payload/ChatRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/domain/payload/CommentDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/domain/payload/CommentRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/domain/payload/ContactRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/domain/payload/MailDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/domain/payload/UserContactDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/domain/payload/dto/ContactDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/domain/payload/dto/NotifyDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/domain/payload/dto/UserDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/domain/payload/request/MailRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/domain/rabbitMQ/SystemListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/domain/rabbitMQ/dto/ChatDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/domain/rabbitMQ/dto/ChatStatusDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/domain/rabbitMQ/dto/NotifyDtoRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/domain/rabbitMQ/dto/RabbitRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/domain/repository/MailRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/domain/restclient/UserServiceRestTemplateClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/domain/service/CallApiService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/domain/service/CommonService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/domain/service/MailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/domain/service/RabbitSenderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/domain/service/SystemListenerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/domain/service/UserContactService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/domain/service/WebsocketService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/System-Service/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/config/UserServiceConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/controller/AuthorizationItemController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/controller/ContactExternalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/controller/ContactInternalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/controller/GroupRoleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/controller/SubscribeExternalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/controller/SubscribeInternalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/controller/UserExternalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/controller/UserInternalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/controller/VerifycationInternalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/common/CommonUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/db/dto/ContactDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/db/read/GroupRoleMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/db/read/RContactMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/db/read/RContactMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/db/read/RUserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/db/read/RUserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/db/write/WUserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/db/write/WUserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/model/AuthProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/model/AuthorizationItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/model/Contact.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/model/FindAllUserRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/model/GroupRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/model/Rating.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/model/Subscribe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/model/UserDescription.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/model/UserRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/model/Verification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/payload/ApiResponseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/payload/ApiResponseEntityList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/payload/ContactDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/payload/ContactDtoForChat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/payload/ContactRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/payload/ContactResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/payload/CreateGroupRoleRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/payload/FindRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/payload/GroupRoleResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/payload/NotifycationDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/payload/SubscribeDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/payload/UserContactDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/payload/UserDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/payload/UserDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/payload/UserRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/payload/UserResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/payload/request/AcceptExpertRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/payload/request/CreateUserRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/payload/request/MailRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/payload/request/UpdateUserStatusRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/payload/response/RabbitRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/payload/response/UserResponseForClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/rabbitMQ/UserListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/rabbitMQ/payload/ContactResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/repository/ContactRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/repository/GroupRoleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/repository/RatingRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/repository/SubscriberRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/repository/UserDescriptionRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/repository/VerifycationRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/restClient/ChatServiceRestTemplate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/restClient/SystemServiceRestTemplateClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/service/CallApiService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/service/ContactService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/service/GroupRoleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/service/RabbitSenderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/service/RatingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/service/SubscribeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/service/VerifycationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User-Service/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local-store/08e75375-3f85-41a7-9970-8cb08a01b24d.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local-store/0d2e5dc2-ce85-4257-b149-c7244a14ed11.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local-store/1f717233-5c5e-4851-92aa-e775db26d792.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local-store/31e99893-6899-456e-8ed5-2dd05206a780.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local-store/3516ad93-a7b6-4f81-8ae6-775f2b041822.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local-store/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local-store/6bbf94be-e1b8-433b-b52d-c5dde0dff394.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local-store/72acc977-c4ed-49fa-9185-2f4d9ca48c90.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local-store/92be4634-0e7e-4384-a44c-b7a222eb4e05.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local-store/948bea1d-eea5-4dac-b5f4-9142f68415f9.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local-store/a4d03166-4f4b-4285-b313-ed45c218db27.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local-store/a81d7f80-9093-487d-aef9-76bab06c0771.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local-store/a9a929fc-c0fc-4e95-9366-95e39ce97149.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local-store/aac1ee8f-b221-4ad0-ad32-6c751f02007e.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local-store/bc919610-0949-4e8e-bbca-6abbd34da4e0.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local-store/d1d4aa41-6fab-4000-9dc7-1949a13d239f.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local-store/d9d2585f-4da6-4246-89b3-56097aab0d6d.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local-store/ffb54662-23f5-41b7-9502-b1c1607d0d57.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiGateway-Service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGateway-Service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiGateway-Service/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGateway-Service/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiGateway-Service/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGateway-Service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiGateway-Service/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGateway-Service/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiGateway-Service/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGateway-Service/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiGateway-Service/src/main/java/com/se1/apigatewayservice/ApiGatewayServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGateway-Service/src/main/java/com/se1/apigatewayservice/ApiGatewayServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiGateway-Service/src/main/java/com/se1/apigatewayservice/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGateway-Service/src/main/java/com/se1/apigatewayservice/CorsConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ApiGateway-Service/src/main/java/com/se1/apigatewayservice/GatewayConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGateway-Service/src/main/java/com/se1/apigatewayservice/GatewayConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiGateway-Service/src/main/java/com/se1/apigatewayservice/RouterValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGateway-Service/src/main/java/com/se1/apigatewayservice/RouterValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auth-Service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Auth-Service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auth-Service/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Auth-Service/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auth-Service/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Auth-Service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auth-Service/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/Auth-Service/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auth-Service/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/Auth-Service/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se1/authservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se1/authservice/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se1/authservice/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se1/authservice/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se1/authservice/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se1/authservice/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se1/authservice/payload/UserDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se1/authservice/payload/UserDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se1/authservice/security/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se1/authservice/security/CustomUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se1/authservice/security/oauth2/CustomOAuth2UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se1/authservice/security/oauth2/CustomOAuth2UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se1/authservice/security/oauth2/OAuth2AuthenticationSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se1/authservice/security/oauth2/OAuth2AuthenticationSuccessHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat-Service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat-Service/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat-Service/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat-Service/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat-Service/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/ChatServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/ChatServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/config/MqConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/config/MqConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/config/SCMConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/config/SCMConstant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/controller/ChatListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/controller/ChatListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config-Service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Config-Service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config-Service/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Config-Service/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config-Service/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Config-Service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config-Service/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/Config-Service/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config-Service/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/Config-Service/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config-Service/src/main/java/com/se/configservice/ConfigServiceApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config-Service/src/main/resources/config/api-gateway.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/api-gateway.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config-Service/src/main/resources/config/auth-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/auth-service.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config-Service/src/main/resources/config/eureka-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/eureka-service.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config-Service/src/main/resources/config/post-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/post-service.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config-Service/src/main/resources/config/system-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/system-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/domain/db/read/RChatMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/domain/db/read/RChatMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/domain/db/read/RChatMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/domain/db/read/RChatMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/domain/db/write/WChatMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/domain/db/write/WChatMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/domain/db/write/WChatMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/domain/db/write/WChatMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/domain/model/Chat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/domain/payload/ChatRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/domain/repository/ChatRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/domain/service/ChatService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/model/Chat.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/model/Chat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/payload/CreateChatRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/payload/CreateChatRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/payload/UpdateChatRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/payload/UpdateChatRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/service/ChatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/service/ChatService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config-Service/src/main/resources/config/user-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/user-service.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eureka-Service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Eureka-Service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eureka-Service/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Eureka-Service/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eureka-Service/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Eureka-Service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eureka-Service/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/Eureka-Service/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eureka-Service/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/Eureka-Service/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post-Service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Post-Service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post-Service/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Post-Service/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post-Service/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Post-Service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post-Service/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/Post-Service/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post-Service/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/Post-Service/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/PostServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/PostServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/db/read/RPostMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/db/read/RPostMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/db/read/RPostMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/db/read/RPostMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/db/write/WTopicTagMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/db/write/WTopicTagMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/db/write/WTopicTagMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/db/write/WTopicTagMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/entity/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/entity/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/entity/TopicTag.java" beforeDir="false" afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/entity/TopicTag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/payload/GetPostResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/payload/GetPostResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/payload/PostDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/payload/PostDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/payload/PostRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/payload/PostRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/payload/UserDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/payload/UserDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/repository/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/repository/PostRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/repository/TopicTagRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/repository/TopicTagRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/service/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/service/impl/PostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/service/impl/PostServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/service/impl/TopicTagService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/service/impl/TopicTagService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/System-Service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/System-Service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/System-Service/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/System-Service/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/System-Service/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/System-Service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/System-Service/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/System-Service/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/System-Service/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/System-Service/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/SystemServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/SystemServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/config/MqConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/config/MqConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/config/SCMConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/config/SCMConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/controller/MailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/controller/MailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/controller/UserContactController.java" beforeDir="false" afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/controller/UserContactController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/controller/UtilController.java" beforeDir="false" afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/controller/UtilController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/controller/WebsocketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/controller/WebsocketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User-Service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/User-Service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User-Service/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/User-Service/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User-Service/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/User-Service/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User-Service/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/User-Service/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User-Service/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/User-Service/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/UserServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/UserServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/config/MqConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/config/MqConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/common/SCMConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/common/SCMConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notify-Service/src/main/java/com/se1/notifyservice/domain/model/Notify.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notify-Service/src/main/java/com/se1/notifyservice/domain/model/Notify.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -407,7 +107,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -417,17 +117,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.PostServiceApplication">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ApiGatewayServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="ApiGateway-Service.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.se1.apigatewayservice.ApiGatewayServiceApplication" />
@@ -445,6 +134,13 @@
     <configuration name="ChatServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="Chat-Service.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.se1.chatservice.ChatServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="Config-Service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.se1.configservice.ConfigServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -489,7 +185,9 @@
       <workItem from="1709973553691" duration="2256000" />
       <workItem from="1709975998272" duration="1393000" />
       <workItem from="1710295882817" duration="52000" />
-      <workItem from="1710508015183" duration="1131000" />
+      <workItem from="1710508015183" duration="1789000" />
+      <workItem from="1710557148513" duration="47000" />
+      <workItem from="1710557239409" duration="196000" />
     </task>
     <task id="LOCAL-00001" summary="fix Cors api gateway service">
       <created>1709975645729</created>
