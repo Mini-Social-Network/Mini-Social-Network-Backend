@@ -18,13 +18,15 @@ public class GetPostResponseDto {
 	private List<String> imageList;
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
 	private Date createAt;
-	private Integer likeCount;
-	private Integer disLikeCount;
-	private Integer commentCount;
-	private Integer shareCount;
-	
+	private Integer likeCount = 0;
+	private Integer dislikeCount = 0;
+	private Integer commentCount = 0;
+	private Integer shareCount = 0;
+	private Boolean isLike = false;
+	private Boolean isDislike = false;
 	private TopicTag topicTag;
 	private User user;
+	
 	@Data
 	public static class TopicTag {
 		private Integer id;

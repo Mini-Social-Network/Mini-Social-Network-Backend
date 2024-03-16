@@ -172,7 +172,7 @@ public class PostServiceImpl implements PostService {
 			postResponseDto.setUser(getUSerPost(p.getUserId()));
 			postResponseDto.setTopicTag(getTopicTag(p.getTopicTagId()));
 			postResponseDto.setLikeCount(likeCountPost(postId));
-			postResponseDto.setDisLikeCount(disLikeCount(postId));
+			postResponseDto.setDislikeCount(disLikeCount(postId));
 			postResponseDto.setCommentCount(commentCount(postId));
 			postResponseDto.setShareCount(shareCount(postId));
 
@@ -242,7 +242,7 @@ public class PostServiceImpl implements PostService {
 			postResponseDto.setUser(getUSerPost(p.getUserId()));
 			postResponseDto.setTopicTag(getTopicTag(p.getTopicTagId()));
 			postResponseDto.setLikeCount(likeCountPost(postId));
-			postResponseDto.setDisLikeCount(disLikeCount(postId));
+			postResponseDto.setDislikeCount(disLikeCount(postId));
 			postResponseDto.setCommentCount(commentCount(postId));
 			postResponseDto.setShareCount(shareCount(postId));
 
@@ -264,7 +264,7 @@ public class PostServiceImpl implements PostService {
 			postResponseDto.setUser(getUSerPost(post.get().getUserId()));
 			postResponseDto.setTopicTag(getTopicTag(post.get().getTopicTagId()));
 			postResponseDto.setLikeCount(likeCountPost(postId));
-			postResponseDto.setDisLikeCount(disLikeCount(postId));
+			postResponseDto.setDislikeCount(disLikeCount(postId));
 			postResponseDto.setCommentCount(commentCount(postId));
 			postResponseDto.setShareCount(shareCount(postId));
 
@@ -281,7 +281,7 @@ public class PostServiceImpl implements PostService {
 		List<ContactDto> contactDtos = restTemplateClient.getListFriend(userId);
 		List<SubscribeDto> subscribeDtos = restTemplateClient.getAllExpertSubscribe(userId);
 		List<Long> userFriendId = contactDtos.stream().map(c -> c.getUserFriend().getId()).collect(Collectors.toList());
-		List<Long> listExpertId = subscribeDtos.stream().map(s -> s.getUserExpert().getId())
+		List<Long> listExpertId = subscribeDtos.stream().map(s -> s.getUserExpertId().getId())
 				.collect(Collectors.toList());
 		List<Long> allIdUserId = new ArrayList<>(userFriendId);
 		allIdUserId.addAll(listExpertId);
@@ -291,12 +291,15 @@ public class PostServiceImpl implements PostService {
 
 		List<com.se1.postservice.domain.db.dto.PostDto> allPost = rPostMapper.findAllPostByUserId(
 				String.join(", ", allIdUserIdDistinct.stream().map(m -> m.toString()).collect(Collectors.toList())),
-				offset);
+				offset, userId);
 		List<Integer> topicTagIds = allPost.stream().map(ap -> ap.getTopicTagId()).collect(Collectors.toList());
 		List<GetPostResponseDto.TopicTag> listTopicTagResponse = getTopicTag(topicTagIds);
 		List<GetPostResponseDto> getPostResponseDtos = allPost.stream().map(p -> {
 			GetPostResponseDto postResponseDto = new GetPostResponseDto();
+			postResponseDto.setImageList(List.of(p.getImageList()));
 			BeanUtils.copyProperties(p, postResponseDto);
+			postResponseDto.setIsLike((p.getIsLike() != null && p.getIsLike().equals(1)) ? true : false);
+			postResponseDto.setIsDislike((p.getIsDislike() != null && p.getIsDislike().equals(1)) ? true : false);
 			postResponseDto.setUser(getUSerPost(p.getUserId()));
 			postResponseDto.setTopicTag(
 					listTopicTagResponse.stream().filter(t -> p.getTopicTagId().equals(t.getId())).findFirst().get());
@@ -312,7 +315,7 @@ public class PostServiceImpl implements PostService {
 	@Override
 	public void findAllPostByUserId(Long userId, ApiResponseEntity apiResponseEntity, int offset) {
 		List<com.se1.postservice.domain.db.dto.PostDto> allPost = rPostMapper.findAllPostByUserId(userId.toString(),
-				offset);
+				offset, userId);
 		List<Integer> topicTagIds = allPost.stream().map(ap -> ap.getTopicTagId()).collect(Collectors.toList());
 		List<GetPostResponseDto.TopicTag> listTopicTagResponse = getTopicTag(topicTagIds);
 		List<GetPostResponseDto> getPostResponseDtos = allPost.stream().map(p -> {
@@ -336,10 +339,11 @@ public class PostServiceImpl implements PostService {
 	}
 
 	@Override
-	public void findAllPostByCondition(Map<String, Object> param, ApiResponseEntity apiResponseEntity, int offset) {
+	public void findAllPostByCondition(Long userId, Map<String, Object> param, ApiResponseEntity apiResponseEntity,
+			int offset) {
 		Map<String, String> paramConvert = convertMapToQuery(param);
 		List<com.se1.postservice.domain.db.dto.PostDto> allPost = rPostMapper.findAllPostByCondition(paramConvert,
-				offset);
+				offset, userId);
 		List<Integer> topicTagIds = allPost.stream().map(ap -> ap.getTopicTagId()).collect(Collectors.toList());
 		List<GetPostResponseDto.TopicTag> listTopicTagResponse = getTopicTag(topicTagIds);
 		List<GetPostResponseDto> getPostResponseDtos = allPost.stream().map(p -> {
