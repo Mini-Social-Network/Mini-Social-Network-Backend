@@ -5,24 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99f97707-0ba5-43b0-aa3d-fb03e8706718" name="Default Changelist" comment="add dto for comment service">
+      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/controller/RatingExternalController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/payload/request/DoRatingRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ApiGateway-Service/src/main/java/com/se1/apigatewayservice/GatewayConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGateway-Service/src/main/java/com/se1/apigatewayservice/GatewayConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/config/SCMConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/config/SCMConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/controller/ChatListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/controller/ChatListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/domain/db/read/RChatMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/domain/db/read/RChatMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/domain/db/read/RChatMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/domain/db/read/RChatMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/domain/db/write/WChatMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/domain/db/write/WChatMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/domain/db/write/WChatMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/domain/db/write/WChatMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/domain/model/Chat.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/domain/payload/ChatRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/domain/repository/ChatRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/domain/service/ChatService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/model/Chat.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/model/Chat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/payload/CreateChatRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/payload/CreateChatRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/payload/UpdateChatRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/payload/UpdateChatRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/service/ChatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/service/ChatService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config-Service/src/main/resources/config/user-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/user-service.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notify-Service/src/main/java/com/se1/notifyservice/domain/model/Notify.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notify-Service/src/main/java/com/se1/notifyservice/domain/model/Notify.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/controller/CommentExternalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/controller/CommentExternalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/db/read/RPostMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/db/read/RPostMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/repository/CommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/repository/CommentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/service/impl/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/service/impl/CommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/controller/SubscribeExternalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/controller/SubscribeExternalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/model/Rating.java" beforeDir="false" afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/model/Rating.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/payload/UserDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/payload/UserDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/repository/RatingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/repository/RatingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/repository/SubscriberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/repository/SubscriberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/service/RatingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/service/RatingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/service/SubscribeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/domain/service/SubscribeService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +185,7 @@
       <workItem from="1710295882817" duration="52000" />
       <workItem from="1710508015183" duration="1789000" />
       <workItem from="1710557148513" duration="47000" />
-      <workItem from="1710557239409" duration="196000" />
+      <workItem from="1710557239409" duration="1402000" />
     </task>
     <task id="LOCAL-00001" summary="fix Cors api gateway service">
       <created>1709975645729</created>
