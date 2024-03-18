@@ -1,11 +1,5 @@
 package com.se1.userservice.domain.common;
 
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-
-import com.se1.userservice.domain.model.AuthorizationItem;
-
 public interface SCMConstant {
 
 	public static final String CONTACT_REQUEST = "request";
@@ -18,6 +12,7 @@ public interface SCMConstant {
 
 	// RABBIT ACTION
 	public static final String SYSTEM_CONTACT = "contact";
+	public static final String SYSTEM_SUBCRIBER = "subscriber";
 	public static final String USER_UPDATE_STATUS = "update-status";
 
 	public static final Byte VALID_FLG = 1;
@@ -32,17 +27,4 @@ public interface SCMConstant {
 	public static final String POST_CONTROLLER = "Post";
 	public static final String LOG_USER_CONTROLLER = "LogUser";
 
-	public static Map<Integer, String> getAllAuthorItem() {
-		List<AuthorizationItem> authorizationItems = List.of(AuthorizationItem.values());
-		return authorizationItems.stream().collect(Collectors.toMap(AuthorizationItem::getId, AuthorizationItem::name));
-	}
-
-	public static Map<Integer, String> getAllAuthorItemByIds(List<String> ids) {
-		List<AuthorizationItem> authorizationItems = List.of(AuthorizationItem.values());
-		return authorizationItems.stream().filter(author -> {
-			var id = author.getId().toString();
-			boolean isValid = ids.contains(id);
-			return isValid;
-		}).collect(Collectors.toMap(AuthorizationItem::getId, AuthorizationItem::name));
-	}
 }

@@ -1,11 +1,14 @@
 package com.se1.postservice.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -29,15 +32,33 @@ public class CommentExternalController {
 	@Autowired
 	private ObjectMapper objectMapper;
 	
-	@PostMapping
+	@PostMapping("/create")
 	public ResponseEntity<?> create(@RequestHeader("user_detail") String userDetailHeader, @RequestBody CreateCommentRequest request) throws JsonMappingException, JsonProcessingException{
 		
 		UserDetail userDetail = objectMapper.readValue(userDetailHeader, UserDetail.class);
 		
 		try {
-			commentService.processCreat(null, apiResponseEntity);
+			commentService.processCreat(request, apiResponseEntity, userDetail);
 		} catch (Exception e) {
-			// TODO: handle exception
+			apiResponseEntity.setData(null);
+			apiResponseEntity.setErrorList(List.of(e.getMessage()));
+			apiResponseEntity.setStatus(0);
+		}
+		
+		return ResponseEntity.ok(apiResponseEntity);
+	}
+	
+	@PostMapping("/getAllComment")
+	public ResponseEntity<?> getAllComment(@RequestParam("postId") Long postId, @RequestHeader("user_detail") String userDetailHeader) throws JsonMappingException, JsonProcessingException{
+		
+		UserDetail userDetail = objectMapper.readValue(userDetailHeader, UserDetail.class);
+		
+		try {
+			commentService.processGetAllComment(postId, apiResponseEntity, userDetail);
+		} catch (Exception e) {
+			apiResponseEntity.setData(null);
+			apiResponseEntity.setErrorList(List.of(e.getMessage()));
+			apiResponseEntity.setStatus(0);
 		}
 		
 		return ResponseEntity.ok(apiResponseEntity);

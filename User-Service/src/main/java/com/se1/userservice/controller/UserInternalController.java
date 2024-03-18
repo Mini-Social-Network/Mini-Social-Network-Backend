@@ -1,10 +1,8 @@
 package com.se1.userservice.controller;
 
-import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 
 import org.springframework.http.ResponseEntity;
@@ -14,13 +12,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.se1.userservice.domain.model.AuthProvider;
 import com.se1.userservice.domain.model.User;
 import com.se1.userservice.domain.model.UserRole;
 import com.se1.userservice.domain.payload.ApiResponseEntity;
-import com.se1.userservice.domain.payload.FindRequest;
 import com.se1.userservice.domain.payload.UserRequestDto;
 import com.se1.userservice.domain.payload.UserResponseDto;
 import com.se1.userservice.domain.repository.UserRepository;
@@ -37,11 +33,7 @@ public class UserInternalController {
 
 	private final UserRepository repository;
 
-	private DateTimeFormatter localDateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-
 	private final ApiResponseEntity apiResponseEntity;
-
-	private final ObjectMapper objectMapper;
 
 	@PostMapping("/save")
 	public ResponseEntity<?> save(@RequestBody UserRequestDto userRequestDto) {
@@ -76,34 +68,7 @@ public class UserInternalController {
 	public ResponseEntity<?> findById(@RequestParam("id") Long id) throws Exception {
 
 		try {
-			service.processFindUserById(id, apiResponseEntity);
-		} catch (Exception e) {
-			apiResponseEntity.setData(null);
-			apiResponseEntity.setErrorList(List.of(e.getMessage()));
-			apiResponseEntity.setStatus(0);
-		}
-		return ResponseEntity.ok().body(apiResponseEntity);
-	}
-
-	@PostMapping("/find")
-	public ResponseEntity<?> find(@RequestBody FindRequest findRequest) {
-		String findRequestStr;
-		try {
-			findRequestStr = objectMapper.writeValueAsString(findRequest);
-			Map<String, Object> findRequestMap = objectMapper.readValue(findRequestStr, Map.class);
-			service.processFindUser(findRequestMap, apiResponseEntity);
-		} catch (JsonProcessingException e) {
-			apiResponseEntity.setData(null);
-			apiResponseEntity.setErrorList(List.of(e.getMessage()));
-			apiResponseEntity.setStatus(0);
-		}
-		return ResponseEntity.ok().body(apiResponseEntity);
-	}
-
-	@PostMapping("/findByName")
-	public ResponseEntity<?> findByName(@RequestParam("name") String name) {
-		try {
-			service.processFindByName(name, apiResponseEntity);
+			service.processFindUserById(null, id, apiResponseEntity);
 		} catch (Exception e) {
 			apiResponseEntity.setData(null);
 			apiResponseEntity.setErrorList(List.of(e.getMessage()));
@@ -129,6 +94,9 @@ public class UserInternalController {
 		try {
 			service.processUpdateStatus(id, status, apiResponseEntity);
 		} catch (Exception e) {
+			apiResponseEntity.setData(null);
+			apiResponseEntity.setErrorList(List.of(e.getMessage()));
+			apiResponseEntity.setStatus(1);
 		}
 		return ResponseEntity.ok().body(apiResponseEntity);
 	}
@@ -146,11 +114,12 @@ public class UserInternalController {
 		user.setRole(UserRole.valueOf(userRequestDto.getRole()));
 		user.setTopicId(UUID.randomUUID().toString());
 		user.setIsExpert(false);
-		user.setStatus(new Byte("2"));
+		user.setStatus(new Byte("0"));
 		user.setDelFlg(false);
 		user.setCreateAt(new Date());
 		user.setUpdateAt(new Date());
-
+		user.setLastTime(new Date());
+		
 		return user;
 	}
 

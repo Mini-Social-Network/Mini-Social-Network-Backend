@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class CreateChatRequest {
 	private String content;
-	private long userId;
+	private Long userId;
 	private String topicId;
 	private Long chatParentId;
 	private Boolean isFile;

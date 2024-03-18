@@ -1,10 +1,8 @@
 package com.se1.userservice.domain.model;
 
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -55,7 +53,7 @@ public class User {
     private String topicId;
 
     @Column(nullable = false)
-	private Byte status; // 1: online, 2 offline
+	private Byte status; // 1: online, 0 offline
     
     private String providerId;
     
@@ -69,9 +67,6 @@ public class User {
     private String specialist;
     
     private String workPlace;
-    
-    @ElementCollection
-    private List<UserDescription> description;
     
     @Column(nullable = false)
     private Boolean delFlg;
