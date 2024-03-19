@@ -34,7 +34,7 @@ public class Post {
 		
 	@Column(nullable = false)
 	private int status;
-
+	
 	@Column(length = 9618, nullable = false)
 	private String context;
 	
