@@ -20,8 +20,13 @@ spring:
     host: localhost
     port: 5672
     username: admin
-    password: Zaq12wsx1234
+    password: admin
 
+  mandatory-file-encoding: UTF-8
+    http:
+      encoding:
+        charset: UTF-8
+        enabled: true
 
 server:
   port: 8082

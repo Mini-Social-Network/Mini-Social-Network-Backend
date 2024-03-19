@@ -6,13 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="99f97707-0ba5-43b0-aa3d-fb03e8706718" name="Default Changelist" comment="add dto for comment service">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat-Service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notify-Service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Notify-Service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post-Service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Post-Service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/entity/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/Post-Service/src/main/java/com/se1/postservice/domain/entity/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/System-Service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/System-Service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/config/WebsocketMessageBrokerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/config/WebsocketMessageBrokerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User-Service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/User-Service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config-Service/src/main/resources/config/chat-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/chat-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config-Service/src/main/resources/config/notify-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/notify-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config-Service/src/main/resources/config/post-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/post-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config-Service/src/main/resources/config/system-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/system-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config-Service/src/main/resources/config/user-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/user-service.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +180,7 @@
       <workItem from="1710508015183" duration="1789000" />
       <workItem from="1710557148513" duration="47000" />
       <workItem from="1710557239409" duration="1403000" />
-      <workItem from="1710770515449" duration="341000" />
+      <workItem from="1710770515449" duration="970000" />
     </task>
     <task id="LOCAL-00001" summary="fix Cors api gateway service">
       <created>1709975645729</created>
