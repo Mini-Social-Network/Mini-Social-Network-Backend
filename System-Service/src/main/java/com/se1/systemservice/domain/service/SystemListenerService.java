@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,7 +36,7 @@ public class SystemListenerService {
 
 	@Autowired
 	private UserServiceRestTemplateClient restTemplateClient;
-	
+
 	@Autowired
 	private ObjectMapper objectMapper;
 
@@ -45,27 +46,27 @@ public class SystemListenerService {
 		UserDetail userSender = data.getUserSender();
 		String type = "contact";
 		switch (status) {
-		case 1: // Request Friend
-			NotifyDtoRequest notifyRequestFriend = generatorNotifyDtoForContact(userSender, userReciver, data.getTopicId(),
-					status, type);
+			case 1: // Request Friend
+				NotifyDtoRequest notifyRequestFriend = generatorNotifyDtoForContact(userSender, userReciver, data.getTopicId(),
+						status, type);
 
-			rabbitSenderService.convertAndSendNotify(notifyRequestFriend);
-			break;
-		case 0: // Unfiend
-		case 2: // Accept Friend
-			NotifyDtoRequest notifyUnfiendOrAcceptFriend = generatorNotifyDtoForContact(userReciver, userSender,
-					data.getTopicId(), status, type);
+				rabbitSenderService.convertAndSendNotify(notifyRequestFriend);
+				break;
+			case 0: // Unfiend
+			case 2: // Accept Friend
+				NotifyDtoRequest notifyUnfiendOrAcceptFriend = generatorNotifyDtoForContact(userReciver, userSender,
+						data.getTopicId(), status, type);
 
-			rabbitSenderService.convertAndSendNotify(notifyUnfiendOrAcceptFriend);
-			break;
-		default:
-			break;
+				rabbitSenderService.convertAndSendNotify(notifyUnfiendOrAcceptFriend);
+				break;
+			default:
+				break;
 		}
 
 	}
 
 	private NotifyDtoRequest generatorNotifyDtoForContact(UserDetail userFrom, UserDetail userTo, String TopicId, int status,
-			String type) throws JsonProcessingException {
+														  String type) throws JsonProcessingException {
 		Map<String, Object> notifyValue = new HashMap<>();
 		notifyValue.put("user", objectMapper.writeValueAsString(userFrom));
 		notifyValue.put("action", SCMConstant.getContactActionByStatus(status));
@@ -91,31 +92,41 @@ public class SystemListenerService {
 		mapChat.put("action", "");
 		mapChat.put("data", chatDto);
 		websocketService.sendMessageChat(topicId, mapChat);
-		
+
 		ApiResponseEntity apiResponseEntity = (ApiResponseEntity) restTemplateClient.getContactByTopicId(topicId);
 		ContactDto contact = objectMapper.convertValue(apiResponseEntity.getData(), ContactDto.class) ;
-		
+		Long userReciverId = contact.getUserReciver().getId();
+		UserDetail userSendMessage = contact.getUserSender();
+		UserDetail userReciverMessage = contact.getUserReciver();
+		if(chatDto.getUser().getId().equals(userReciverId)) {
+			userSendMessage = contact.getUserReciver();
+			userReciverMessage = contact.getUserSender();
+		}
 		NotifyDto notifyDto = new NotifyDto();
+		NotifyDto.User user = new NotifyDto.User();
+		BeanUtils.copyProperties(userSendMessage, user);
 		Map<String, Object> notifyValue = new HashMap<>();
+		notifyValue.put("user", objectMapper.writeValueAsString(userReciverMessage));
 		notifyValue.put("action", "new-message");
+		notifyDto.setUser(user);
+		notifyDto.setType("new-message");
 		notifyDto.setValue(objectMapper.writeValueAsString(notifyValue));
-		websocketService.sendUser(contact.getUserSender().getTopicId(), notifyDto);
-		websocketService.sendUser(contact.getUserReciver().getTopicId(), notifyDto);
+		websocketService.sendUser(userReciverMessage.getTopicId(), notifyDto);
 	}
 
 	public void processActionSystemChatStatus(ChatStatusDto chatStatusDto) {
 		Map<String, Object> mapChat = new HashMap<>();
 		switch (chatStatusDto.getChatStatus()) {
-		case "delete":
-			mapChat.put("action", "delete-chat");
-			mapChat.put("data", chatStatusDto.getChat());
-			break;
-		case "revoke":
-			mapChat.put("action", "revoke-chat");
-			mapChat.put("data", chatStatusDto.getChat());
-			break;
-		default:
-			break;
+			case "delete":
+				mapChat.put("action", "delete-chat");
+				mapChat.put("data", chatStatusDto.getChat());
+				break;
+			case "revoke":
+				mapChat.put("action", "revoke-chat");
+				mapChat.put("data", chatStatusDto.getChat());
+				break;
+			default:
+				break;
 		}
 		websocketService.sendMessageChat(chatStatusDto.getTopicId(), mapChat);
 	}
@@ -131,8 +142,8 @@ public class SystemListenerService {
 	}
 
 	private NotifyDtoRequest generatorNotifyDtoForPost(UserDetail userReciver, UserDetail userSender, PostDto postDto,
-			String type) throws JsonProcessingException {
-		
+													   String type) throws JsonProcessingException {
+
 		Map<String, Object> notifyValue = new HashMap<>();
 		notifyValue.put("user", objectMapper.writeValueAsString(userReciver));
 		notifyValue.put("action", postDto.getAction());
@@ -141,12 +152,12 @@ public class SystemListenerService {
 			String notifyPostParam = String.format("post=%s", postDto.getPostId());
 			param.add(notifyPostParam);
 		}
-		
+
 		if(postDto.getCommentId() != null) {
 			String notifyCommnetParam = String.format("comment=%s", postDto.getCommentId());
 			param.add(notifyCommnetParam);
 		}
-		
+
 		NotifyDtoRequest notifyDto = new NotifyDtoRequest();
 		notifyDto.setUserId(userSender.getId());
 		notifyDto.setParam(String.join("&", param));
@@ -167,11 +178,11 @@ public class SystemListenerService {
 	}
 
 	private NotifyDtoRequest generatorNotifyDtoForSub(UserDetail userReciver, UserDetail userSender,
-			SubScriberDto subScriberDto, String type) throws JsonProcessingException {
+													  SubScriberDto subScriberDto, String type) throws JsonProcessingException {
 		Map<String, Object> notifyValue = new HashMap<>();
 		notifyValue.put("user", objectMapper.writeValueAsString(userReciver));
 		notifyValue.put("action", "subscriber");
-		
+
 		List<String> param = new ArrayList<>();
 		if(subScriberDto.getUserId() != null) {
 			String notifyPostParam = String.format("userId=%s", subScriberDto.getUserId());
@@ -182,7 +193,7 @@ public class SystemListenerService {
 		notifyDto.setParam(String.join("&", param));
 		notifyDto.setValue(objectMapper.writeValueAsString(notifyValue));
 		notifyDto.setType(type);
-		
+
 		return notifyDto;
 	}
 

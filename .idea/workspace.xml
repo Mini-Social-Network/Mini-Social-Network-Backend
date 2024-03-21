@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99f97707-0ba5-43b0-aa3d-fb03e8706718" name="Default Changelist" comment="add dto for comment service">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/domain/service/SystemListenerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/domain/service/SystemListenerService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +175,7 @@
       <workItem from="1710508015183" duration="1789000" />
       <workItem from="1710557148513" duration="47000" />
       <workItem from="1710557239409" duration="1403000" />
-      <workItem from="1710770515449" duration="4585000" />
+      <workItem from="1710770515449" duration="4660000" />
     </task>
     <task id="LOCAL-00001" summary="fix Cors api gateway service">
       <created>1709975645729</created>
