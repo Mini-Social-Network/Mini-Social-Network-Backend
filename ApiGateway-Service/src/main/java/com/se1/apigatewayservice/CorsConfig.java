@@ -14,8 +14,8 @@ public class CorsConfig extends CorsConfiguration{
     public CorsWebFilter corsFilter()
     {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowCredentials( true );
-        config.setAllowedOrigins( List.of("") );
+        config.setAllowCredentials( false );
+        config.setAllowedOrigins( List.of( "*" ) );
         config.setAllowedMethods( List.of( "*" ) );
         config.setAllowedHeaders( List.of( "*" ) );
 
