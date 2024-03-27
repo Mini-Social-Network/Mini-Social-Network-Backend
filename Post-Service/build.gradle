@@ -7,15 +7,14 @@ plugins {
 group = 'com.se'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
+
 tasks.withType(JavaCompile) {
 	options.encoding = 'UTF-8'
 }
-
-
 processResources {
-    from('src/main/java') {
-        include '**/*.xml'
-    }
+	from('src/main/java') {
+		include '**/*.xml'
+	}
 }
 
 repositories {
@@ -27,10 +26,8 @@ ext {
 }
 
 dependencies {
-	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 	implementation 'org.springframework.boot:spring-boot-starter-amqp'
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.0'
-	implementation 'org.springframework.cloud:spring-cloud-starter-config'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
     implementation 'org.springframework.boot:spring-boot-starter-web'

@@ -29,7 +29,6 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
-
   rabbitmq:
     listener:
       simple:
@@ -43,7 +42,7 @@ spring:
     port: 5672
     username: admin
     password: admin
-
+  
 management:
   endpoints:
     web:
