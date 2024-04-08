@@ -2,6 +2,8 @@ cd ..
 
 cd Notify-Service
 
+./gradlew build
+
 gradle wrapper
 
 gradle bootjar 

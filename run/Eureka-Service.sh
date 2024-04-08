@@ -2,6 +2,8 @@ cd ..
 
 cd Eureka-Service
 
+./gradlew build
+
 gradle wrapper
 
 gradle bootjar 

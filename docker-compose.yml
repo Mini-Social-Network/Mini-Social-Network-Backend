@@ -12,7 +12,7 @@ services:
     volumes:
       - ./init:/docker-entrypoint-initdb.d
     networks:
-      - parent-share-network
+      - mini-social-network
     deploy:
       resources:
         limits:
@@ -28,7 +28,7 @@ services:
       RABBITMQ_DEFAULT_USER: "admin"
       RABBITMQ_DEFAULT_PASS: "admin"
     networks:
-      - parent-share-network
+      - mini-social-network
   elasticsearch:
     container_name: elastic-network
     image: elasticsearch:7.17.10
@@ -38,7 +38,7 @@ services:
       - xpack.security.enabled=false
       - "discovery.type=single-node"
     networks:
-      - parent-share-network
+      - mini-social-network
   kibana:
     container_name: kibana-network
     image: kibana:7.17.10
@@ -49,13 +49,13 @@ services:
     environment:
       - ELASTICSEARCH_HOSTS=http://elastic-network:9200
     networks:
-      - parent-share-network
+      - mini-social-network
   redis:
     container_name: redis-network
     image: redis:latest
     hostname: redis
     networks:
-      - parent-share-network
+      - mini-social-network
     environment:
       TZ: "Asia/Ho_Chi_Minh"
       REDIS_MASTER_PASSWORD: test
@@ -69,6 +69,6 @@ services:
           cpus: '0.80'
           memory: 384M
 networks:
-  parent-share-network:
+  mini-social-network:
     driver: bridge
   

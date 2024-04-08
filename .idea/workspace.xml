@@ -4,8 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99f97707-0ba5-43b0-aa3d-fb03e8706718" name="Default Changelist" comment="add dto for comment service">
+    <list default="true" id="60cb4748-703c-4ed7-a5ff-7076c1e74228" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Social-BE.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries-with-intellij-classes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,19 +34,13 @@
     <projectState path="$PROJECT_DIR$/Chat-Service">
       <ProjectState />
     </projectState>
-    <projectState path="$PROJECT_DIR$/Comment-Service">
-      <ProjectState />
-    </projectState>
     <projectState path="$PROJECT_DIR$/Config-Service">
       <ProjectState />
     </projectState>
     <projectState path="$PROJECT_DIR$/Eureka-Service">
       <ProjectState />
     </projectState>
-    <projectState path="$PROJECT_DIR$/Forum-Service">
-      <ProjectState />
-    </projectState>
-    <projectState path="$PROJECT_DIR$/Member-Service">
+    <projectState path="$PROJECT_DIR$/Notify-Service">
       <ProjectState />
     </projectState>
     <projectState path="$PROJECT_DIR$/Post-Service">
@@ -46,19 +49,26 @@
     <projectState path="$PROJECT_DIR$/System-Service">
       <ProjectState />
     </projectState>
-    <projectState path="$PROJECT_DIR$/Thread-Service">
-      <ProjectState />
-    </projectState>
     <projectState path="$PROJECT_DIR$/User-Service">
       <ProjectState />
     </projectState>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="System-Service" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -66,35 +76,42 @@
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
       <map>
-        <entry key="JPA Inspector" value="true" />
-        <entry key="JPA Palette" value="true" />
         <entry key="JPA Structure" value="true" />
       </map>
     </option>
     <option name="myId2Visible">
       <map>
-        <entry key="JPA Inspector" value="true" />
-        <entry key="JPA Palette" value="true" />
         <entry key="JPA Structure" value="false" />
       </map>
     </option>
   </component>
-  <component name="ProjectId" id="2dRarEi8Cjr4TT3yapxb726bdhq" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
+  </component>
+  <component name="ProjectId" id="2choDGnppp9roZFu7dG5lb4GZdP" />
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
+    <option name="foldersAlwaysOnTop" value="false" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -103,7 +120,10 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.PostServiceApplication">
+  <component name="RunManager" selected="Spring Boot.ApiGatewayServiceApplication">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Parent-Share-Social-network/FE/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="ApiGatewayServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="ApiGateway-Service.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.se1.apigatewayservice.ApiGatewayServiceApplication" />
@@ -125,8 +145,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConfigServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <configuration name="ConfigServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="Config-Service.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.se1.configservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.se1.configservice.ConfigServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -135,6 +161,13 @@
     <configuration name="EurekaServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="Eureka-Service.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.se1.eurekaservice.EurekaServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NotifyServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="Notify-Service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.se1.notifyservice.NotifyServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -160,45 +193,47 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="Spring Boot.ConfigServiceApplication" />
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="99f97707-0ba5-43b0-aa3d-fb03e8706718" name="Default Changelist" comment="" />
-      <created>1709973548906</created>
+      <changelist id="60cb4748-703c-4ed7-a5ff-7076c1e74228" name="Default Changelist" comment="" />
+      <created>1708573051513</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1709973548906</updated>
-      <workItem from="1709973553691" duration="2256000" />
-      <workItem from="1709975998272" duration="1393000" />
-      <workItem from="1710295882817" duration="52000" />
-      <workItem from="1710508015183" duration="1789000" />
-      <workItem from="1710557148513" duration="47000" />
-      <workItem from="1710557239409" duration="1403000" />
-      <workItem from="1710770515449" duration="5722000" />
+      <updated>1708573051513</updated>
+      <workItem from="1708573060388" duration="3229000" />
+      <workItem from="1708741684805" duration="12000" />
+      <workItem from="1709113879998" duration="46000" />
+      <workItem from="1710295945196" duration="2326000" />
+      <workItem from="1710319036589" duration="1716000" />
+      <workItem from="1710325903573" duration="1514000" />
+      <workItem from="1710333347470" duration="5377000" />
+      <workItem from="1710380795844" duration="2348000" />
+      <workItem from="1710507994454" duration="13000" />
+      <workItem from="1711549383679" duration="1204000" />
+      <workItem from="1711783148160" duration="126000" />
+      <workItem from="1712111728518" duration="901000" />
+      <workItem from="1712134407125" duration="891000" />
+      <workItem from="1712139740858" duration="919000" />
+      <workItem from="1712195969780" duration="41000" />
+      <workItem from="1712196033492" duration="148000" />
     </task>
-    <task id="LOCAL-00001" summary="fix Cors api gateway service">
-      <created>1709975645729</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1709975645729</updated>
-    </task>
-    <task id="LOCAL-00002" summary="update post service">
-      <created>1709976176673</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1709976176673</updated>
-    </task>
-    <task id="LOCAL-00003" summary="add dto for comment service">
-      <created>1709976627548</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1709976627548</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,9 +253,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix Cors api gateway service" />
-    <MESSAGE value="update post service" />
-    <MESSAGE value="add dto for comment service" />
-    <option name="LAST_COMMIT_MESSAGE" value="add dto for comment service" />
   </component>
 </project>

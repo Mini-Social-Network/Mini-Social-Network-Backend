@@ -2,6 +2,8 @@ cd ..
 
 cd Auth-Service
 
+./gradlew build
+
 gradle wrapper
 
 gradle bootjar 

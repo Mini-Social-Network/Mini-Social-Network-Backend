@@ -2,6 +2,8 @@ cd ..
 
 cd Config-Service
 
+./gradlew build
+
 gradle wrapper
 
 gradle bootjar 

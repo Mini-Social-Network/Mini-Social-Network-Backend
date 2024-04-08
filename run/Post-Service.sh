@@ -2,6 +2,8 @@ cd ..
 
 cd Post-Service
 
+./gradlew build
+
 gradle wrapper
 
 gradle bootjar 

@@ -2,6 +2,8 @@ cd ..
 
 cd User-Service
 
+./gradlew build
+
 gradle wrapper
 
 gradle bootjar 

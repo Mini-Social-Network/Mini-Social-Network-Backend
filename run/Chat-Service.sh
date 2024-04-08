@@ -2,6 +2,8 @@ cd ..
 
 cd Chat-Service
 
+./gradlew build
+
 gradle wrapper
 
 gradle bootjar 

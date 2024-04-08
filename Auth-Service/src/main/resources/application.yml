@@ -65,7 +65,7 @@ management:
 micro-service:
   system-service: http://localhost:8081
   post-service: http://localhost:8082
-  notify-service: http://localhost:8083
+  notify-service: http://localhost:8085
   chat-service: http://localhost:8084
   user-service: http://localhost:8088
   auth-service: http://localhost:8089

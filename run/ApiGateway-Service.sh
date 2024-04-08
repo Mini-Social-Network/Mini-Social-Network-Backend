@@ -2,6 +2,8 @@ cd ..
 
 cd ApiGateway-Service
 
+./gradlew build
+
 gradle wrapper
 
 gradle bootjar 
