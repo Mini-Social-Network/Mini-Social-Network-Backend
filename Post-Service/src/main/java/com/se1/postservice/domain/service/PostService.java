@@ -1,20 +1,30 @@
 package com.se1.postservice.domain.service;
 
-import java.util.List;
+import java.util.Map;
 
-import com.se1.postservice.domain.entity.Post;
-import com.se1.postservice.domain.payload.PostDto.PostTopicTagDto;
-import com.se1.postservice.domain.payload.PostRequest;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.se1.postservice.domain.payload.ApiResponseEntity;
+import com.se1.postservice.domain.payload.CreatePostRequest;
+import com.se1.postservice.domain.payload.UpdatePostRequest;
 import com.se1.postservice.domain.payload.UserDetail;
 
 public interface PostService {
 
-	List<Post> saveAll(List<Post> request);
+	void processSavePost(CreatePostRequest postRequest, UserDetail detail, ApiResponseEntity apiResponseEntity) throws Exception;
 
-	Post save(Post post);
+	void findAllPost(UserDetail detail, ApiResponseEntity apiResponseEntity, int offset) throws JsonMappingException, JsonProcessingException;
 
-	List<String> validation(PostRequest postRequest);
+	void findAllPostByUserId(Long userId, ApiResponseEntity apiResponseEntity, int offset);
 
-	PostTopicTagDto getPostTopicTagDtoById(Integer topicTagId);
+	void findAllPostByCondition(Long userId, Map<String, Object> param, ApiResponseEntity apiResponseEntity, int offset, Integer topicTagId);
+
+	void findById(Long id, Long id2, ApiResponseEntity apiResponseEntity);
+
+	void findPostAllMost(Long id, ApiResponseEntity apiResponseEntity);
+
+	void update(UpdatePostRequest postRequest, UserDetail detail, ApiResponseEntity apiResponseEntity) throws Exception;
+
+	void delete(Long postId, UserDetail detail, ApiResponseEntity apiResponseEntity) throws Exception;
 
 }

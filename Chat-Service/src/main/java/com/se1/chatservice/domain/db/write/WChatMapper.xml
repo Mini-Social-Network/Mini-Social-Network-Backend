@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.se1.chatservice.domain.db.write.WChatMapper">
+	
+	<select id="updateStatus" parameterType="String">
+		Update chats
+		SET
+		is_file = 0 
+		<if test="content != null">
+			, content = #{content}
+		</if>
+		<if test="userDeleteId != null">
+			, user_delete_id = #{userDeleteId}
+		</if>
+		Where id = #{id} 
+		
+	</select>
+
+</mapper>

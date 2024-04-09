@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.se1.userservice.domain.db.read.RUserMapper">
+
+	<resultMap type="com.se1.userservice.domain.model.User" id="ResultMap">
+		<result column="id" jdbcType="BIGINT" javaType="java.lang.Long" property="id" />
+		<result column="name" jdbcType="VARCHAR" javaType="java.lang.String" property="name" />
+		<result column="email" jdbcType="VARCHAR" javaType="java.lang.String" property="email" />
+		<result column="image_url" jdbcType="VARCHAR" javaType="java.lang.String" property="imageUrl" />
+		<result column="email_verified" jdbcType="TINYINT" javaType="java.lang.Boolean" property="emailVerified" />
+		<result column="role" jdbcType="VARCHAR" javaType="com.se1.userservice.domain.model.UserRole" property="role" />
+		<result column="provider" jdbcType="VARCHAR" javaType="com.se1.userservice.domain.model.AuthProvider" property="provider" />
+		<result column="topic_id" jdbcType="VARCHAR" javaType="java.lang.String" property="topicId" />
+		<result column="status" jdbcType="TINYINT" javaType="java.lang.Byte" property="status" />
+		<result column="phone_number" jdbcType="VARCHAR" javaType="java.lang.String" property="phoneNumber" />
+		<result column="is_expert" jdbcType="TINYINT" javaType="java.lang.Boolean" property="isExpert" />
+		<result column="job_title" jdbcType="VARCHAR" javaType="java.lang.String" property="jobTitle" />
+		<result column="specialist" jdbcType="VARCHAR" javaType="java.lang.String" property="specialist" />
+		<result column="work_place" jdbcType="VARCHAR" javaType="java.lang.String" property="workPlace" />
+		<result column="del_flg" jdbcType="TINYINT" javaType="java.lang.Boolean" property="delFlg" />
+		<result column="create_at" jdbcType="DATE" javaType="java.util.Date" property="createAt" />
+		<result column="update_at" jdbcType="DATE" javaType="java.util.Date" property="updateAt" />
+	</resultMap>
+	
+	<resultMap type="com.se1.userservice.domain.db.dto.ReportUserDto" id="ResultMapReport">
+		<result column="id" jdbcType="BIGINT" javaType="java.lang.Long" property="userId" />
+		<result column="report" jdbcType="BIGINT" javaType="java.lang.Long" property="report" />
+		<result column="name" jdbcType="VARCHAR" javaType="java.lang.String" property="name" />
+		<result column="email" jdbcType="VARCHAR" javaType="java.lang.String" property="email" />
+		<result column="image_url" jdbcType="VARCHAR" javaType="java.lang.String" property="imageUrl" />
+		<result column="reasons" jdbcType="VARCHAR" javaType="java.lang.String" property="reasons" />
+	</resultMap>
+
+	<select id="find" parameterType="String" resultMap="ResultMap">
+		SELECT
+			*
+		FROM users
+		${query}
+		
+		Limit 10 Offset #{offset}
+	</select>
+
+	<select id="findAll" resultMap="ResultMap">
+		SELECT
+			*
+		FROM users
+		<where>
+			<foreach item="item" collection="conditions" open="" separator=" AND " close="">
+				${item}
+			</foreach>
+		</where>
+		Limit 10 Offset #{offset}
+	</select>
+	
+	<select id="findAllHaveReport" resultMap="ResultMapReport">
+		SELECT 
+		    u.id AS id,
+		    u.email AS email,
+		    u.name AS name,
+		    u.image_url AS image_url,
+		    GROUP_CONCAT(reason) AS reasons,
+		    COUNT(r.id) AS report
+		FROM db04.users u join db04.report_user r on u.id = r.user_id 
+		<where>
+			<foreach item="item" collection="conditions" open="" separator=" OR " close="">
+				${item}
+			</foreach>
+		</where>
+		group by u.id
+		Limit 10 Offset #{offset}
+	</select>
+
+	<select id="selectByConditionStr" resultType="com.se1.userservice.domain.model.User">
+		Select * from user where ${conditionStr}
+		<if test="order != null">
+			order by #{order}
+		</if>
+		<if test="limit != null">
+			Limit #{limit}
+		</if>
+		<if test="offset != null">
+			Offset #{offset}
+		</if>
+	</select>
+</mapper>

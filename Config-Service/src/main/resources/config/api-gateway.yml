@@ -6,13 +6,14 @@ spring:
     name: api-gateway
   cloud:
     gateway:
-      globalcors:
-        corsConfigurations:
-          '[/**]':
-            allowedOrigins: "*"
-            allowedMethods:
-            - GET
-            - POST
+#      globalcors:
+#        corsConfigurations:
+#          '[/**]':
+#            allowedOrigins: "http://localhost:3000"
+#            allowedHeaders: "*"
+#            allowedMethods:
+#            - GET
+#            - POST
 #      routes:
 #        - id: auth-service
 #          uri: lb://auth-service
@@ -44,3 +45,14 @@ eureka:
     fetchRegistry : true
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+      
+micro-service:
+  system-service: http://localhost:8081
+  post-service: http://localhost:8082
+  notify-service: http://localhost:8083
+  chat-service: http://localhost:8084
+  user-service: http://localhost:8088
+  auth-service: http://localhost:8089
+  api-gateway: http://localhost:8080
+  eureka-service: http://localhost:8761
+  config-service: http://localhost:8071
