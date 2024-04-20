@@ -35,7 +35,7 @@ public class ContactExternalController {
 		ApiResponseEntity apiResponseEntity = new ApiResponseEntity();
 		UserDetail userDetail;
 		try {
-			int status = 0;
+			int status = 1;
 			switch (action) {
 			case SCMConstant.CONTACT_REQUEST:
 				status = 1;

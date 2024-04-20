@@ -1,0 +1,141 @@
+version: "3.9"
+services:
+  apigateway-service:
+    image: apigateway-service:latest
+    container_name: apigateway-service
+    ports:
+      - "8080:8080"
+    networks:
+      - mini-social-network
+    build:
+      context: ../ApiGateway-Service
+      args:
+        BUILD_ID: ${BUILD_ID:-local}
+      labels:
+        core.build.id: ${BUILD_ID:-local}
+        core.git.sha: ${BUILD_ID:-local}
+
+  auth-service:
+    image: auth-service:latest
+    container_name: auth-service
+    ports:
+      - "8089:8089"
+    networks:
+      - mini-social-network
+    build:
+      context: ../Auth-Service
+      args:
+        BUILD_ID: ${BUILD_ID:-local}
+      labels:
+        core.build.id: ${BUILD_ID:-local}
+        core.git.sha: ${BUILD_ID:-local}
+      # dockerfile: ../Auth-Service/Dockerfile
+
+  chat-service:
+    image: chat-service:latest
+    container_name: chat-service
+    ports:
+      - "8084:8084"
+    networks:
+      - mini-social-network
+    build:
+      context: ../Chat-Service
+      args:
+        BUILD_ID: ${BUILD_ID:-local}
+      labels:
+        core.build.id: ${BUILD_ID:-local}
+        core.git.sha: ${BUILD_ID:-local}
+
+  config-service:
+    image: config-service:latest
+    container_name: config-service
+    ports:
+      - "8071:8071"
+    networks:
+      - mini-social-network
+    build:
+      context: ../Config-Service
+      args:
+        BUILD_ID: ${BUILD_ID:-local}
+      labels:
+        core.build.id: ${BUILD_ID:-local}
+        core.git.sha: ${BUILD_ID:-local}
+
+  eureka-service:
+    image: eureka-service:latest
+    container_name: eureka-service
+    ports:
+      - "8761:8761"
+    networks:
+      - mini-social-network
+    build:
+      context: ../Eureka-Service
+      args:
+        BUILD_ID: ${BUILD_ID:-local}
+      labels:
+        core.build.id: ${BUILD_ID:-local}
+        core.git.sha: ${BUILD_ID:-local}
+      
+  notify-service:
+    image: notify-service:latest
+    container_name: notify-service
+    ports:
+      - "8085:8085"
+    networks:
+      - mini-social-network
+    build:
+      context: ../Notify-Service
+      args:
+        BUILD_ID: ${BUILD_ID:-local}
+      labels:
+        core.build.id: ${BUILD_ID:-local}
+        core.git.sha: ${BUILD_ID:-local}
+      
+  post-service:
+    image: post-service:latest
+    container_name: post-service
+    ports:
+      - "8082:8082"
+    networks:
+      - mini-social-network
+    build:
+      context: ../Post-Service
+      args:
+        BUILD_ID: ${BUILD_ID:-local}
+      labels:
+        core.build.id: ${BUILD_ID:-local}
+        core.git.sha: ${BUILD_ID:-local}
+
+  system-service:
+    image: system-service:latest
+    container_name: system-service
+    ports:
+      - "8081:8081"
+    networks:
+      - mini-social-network
+    build:
+      context: ../System-Service
+      args:
+        BUILD_ID: ${BUILD_ID:-local}
+      labels:
+        core.build.id: ${BUILD_ID:-local}
+        core.git.sha: ${BUILD_ID:-local}
+
+  user-service:
+    image: user-service:latest
+    container_name: user-service
+    ports:
+      - "8088:8088"
+    networks:
+      - mini-social-network
+    build:
+      context: ../User-Service
+      args:
+        BUILD_ID: ${BUILD_ID:-local}
+      labels:
+        core.build.id: ${BUILD_ID:-local}
+        core.git.sha: ${BUILD_ID:-local}
+
+networks:
+  mini-social-network:
+    driver: bridge

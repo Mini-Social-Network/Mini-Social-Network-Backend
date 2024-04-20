@@ -5,16 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60cb4748-703c-4ed7-a5ff-7076c1e74228" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Social-BE.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries-with-intellij-classes.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/Mini-Social-Network-Backend.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries-with-intellij-classes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiGateway-Service/src/main/java/com/se1/apigatewayservice/GatewayConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGateway-Service/src/main/java/com/se1/apigatewayservice/GatewayConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config-Service/src/main/resources/config/chat-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/chat-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config-Service/src/main/resources/config/notify-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/notify-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config-Service/src/main/resources/config/post-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/post-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config-Service/src/main/resources/config/system-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/system-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config-Service/src/main/resources/config/user-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/user-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/System-Service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/System-Service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/config/MqConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/config/MqConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/System-Service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/System-Service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/controller/contact/ContactExternalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/controller/contact/ContactExternalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User-Service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/User-Service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +68,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$/System-Service">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -76,11 +91,15 @@
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
       <map>
+        <entry key="JPA Inspector" value="true" />
+        <entry key="JPA Palette" value="true" />
         <entry key="JPA Structure" value="true" />
       </map>
     </option>
     <option name="myId2Visible">
       <map>
+        <entry key="JPA Inspector" value="true" />
+        <entry key="JPA Palette" value="false" />
         <entry key="JPA Structure" value="false" />
       </map>
     </option>
@@ -105,13 +124,14 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -120,7 +140,39 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ApiGatewayServiceApplication">
+  <component name="RunManager" selected="Docker.docker-compose.yml.rabbitmq: Compose Deployment">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SystemServiceApplicationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/System-Service" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.se1.systemservice.SystemServiceApplicationTests&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Parent-Share-Social-network/FE/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -201,10 +253,40 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="docker-compose.yml.rabbitmq: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="rabbitmq" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+      <item itemvalue="Gradle.SystemServiceApplicationTests" />
+      <item itemvalue="JavaScript Debug.index.html" />
+      <item itemvalue="Spring Boot.AuthServiceApplication" />
+      <item itemvalue="Spring Boot.PostServiceApplication" />
+      <item itemvalue="Spring Boot.ApiGatewayServiceApplication" />
+      <item itemvalue="Spring Boot.ChatServiceApplication" />
+      <item itemvalue="Spring Boot.EurekaServiceApplication" />
+      <item itemvalue="Spring Boot.NotifyServiceApplication" />
+      <item itemvalue="Spring Boot.SystemServiceApplication" />
+      <item itemvalue="Spring Boot.UserServiceApplication" />
+      <item itemvalue="Spring Boot.ConfigServiceApplication" />
+      <item itemvalue="Docker.docker-compose.yml.rabbitmq: Compose Deployment" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.rabbitmq: Compose Deployment" />
         <item itemvalue="Spring Boot.ConfigServiceApplication" />
+        <item itemvalue="Gradle.SystemServiceApplicationTests" />
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
@@ -233,6 +315,18 @@
       <workItem from="1712139740858" duration="919000" />
       <workItem from="1712195969780" duration="41000" />
       <workItem from="1712196033492" duration="148000" />
+      <workItem from="1712840636603" duration="766000" />
+      <workItem from="1712887836394" duration="1012000" />
+      <workItem from="1712889860765" duration="3822000" />
+      <workItem from="1712976425073" duration="709000" />
+      <workItem from="1713002145137" duration="1065000" />
+      <workItem from="1713005500016" duration="579000" />
+      <workItem from="1713016110502" duration="2261000" />
+      <workItem from="1713058766558" duration="7813000" />
+      <workItem from="1713153146097" duration="4518000" />
+      <workItem from="1713340148453" duration="946000" />
+      <workItem from="1713438143225" duration="3976000" />
+      <workItem from="1713586332038" duration="15262000" />
     </task>
     <servers />
   </component>

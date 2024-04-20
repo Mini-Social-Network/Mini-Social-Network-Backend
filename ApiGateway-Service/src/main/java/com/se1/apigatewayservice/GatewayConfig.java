@@ -55,7 +55,7 @@ public class GatewayConfig {
 				.route("system-service",
 						r -> r.path("/system/**").filters(f -> f.filter(filter)).uri("http://localhost:8081"))
 				.route("notify-service",
-						r -> r.path("/notify/**").filters(f -> f.filter(filter)).uri("http://localhost:8083"))
+						r -> r.path("/notify/**").filters(f -> f.filter(filter)).uri("http://localhost:8085"))
 				.route("chat-service",
 						r -> r.path("/chat/**").filters(f -> f.filter(filter)).uri("http://localhost:8084"))
 				.build();
