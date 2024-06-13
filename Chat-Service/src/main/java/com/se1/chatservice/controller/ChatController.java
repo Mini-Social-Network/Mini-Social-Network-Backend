@@ -34,18 +34,18 @@ public class ChatController {
 		}
 		return ResponseEntity.ok(apiResponseEntity);
 	}
-	
+
 	@PostMapping("/getNewChat")
-	public ResponseEntity<?> getNewChat(@RequestParam("topicId") String topicId){
-		
+	public ResponseEntity<?> getNewChat(@RequestParam("topicId") String topicId) {
 		try {
 			chatService.processGetNewChat(topicId, apiResponseEntity);
+			return ResponseEntity.ok(apiResponseEntity);
 		} catch (Exception e) {
 			apiResponseEntity.setData(null);
 			apiResponseEntity.setErrorList(List.of(e.getMessage()));
 			apiResponseEntity.setStatus(0);
+			return ResponseEntity.badRequest().body(apiResponseEntity);
 		}
-		return ResponseEntity.ok(apiResponseEntity);
 	}
 	
 	@PostMapping("/updateStatus")

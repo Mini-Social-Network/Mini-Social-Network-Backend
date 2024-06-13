@@ -1,5 +1,6 @@
 package com.se1.chatservice.repository;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
@@ -21,4 +22,5 @@ public interface ChatRepository extends CrudRepository<Chat, Long>{
 	@Query("UPDATE Chat c Set c.status = 1 where c.id IN :chatIds")
 	List<Integer> updateStatusChat(@Param("chatIds") List<Long> chatIds);
 
+	List<Chat> findByTopicIdAndCreateAtAfter(String topicId, Date fromDate);
 }

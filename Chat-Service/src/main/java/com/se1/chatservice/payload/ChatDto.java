@@ -25,9 +25,9 @@ public class ChatDto {
 		private String name;
 		private String imageUrl;
 		private Boolean isExpert;
-		private Double rating = null;
+		private Double rating; // Initialize as null by default
 		private int status;
 		@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-		private Date lastTime = new Date();
+		private Date lastTime;
 	}
 }

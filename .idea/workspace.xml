@@ -5,28 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60cb4748-703c-4ed7-a5ff-7076c1e74228" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Mini-Social-Network-Backend.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries-with-intellij-classes.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/payload/GetNewChatRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiGateway-Service/src/main/java/com/se1/apigatewayservice/GatewayConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGateway-Service/src/main/java/com/se1/apigatewayservice/GatewayConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config-Service/src/main/resources/config/chat-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/chat-service.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config-Service/src/main/resources/config/notify-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/notify-service.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config-Service/src/main/resources/config/post-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/post-service.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config-Service/src/main/resources/config/system-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/system-service.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config-Service/src/main/resources/config/user-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Config-Service/src/main/resources/config/user-service.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/System-Service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/System-Service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/config/MqConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/System-Service/src/main/java/com/se1/systemservice/config/MqConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/System-Service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/System-Service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/controller/contact/ContactExternalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/User-Service/src/main/java/com/se1/userservice/controller/contact/ContactExternalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User-Service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/User-Service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/controller/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/controller/ChatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/controller/ChatExternalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/controller/ChatExternalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/payload/ChatDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/payload/ChatDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/repository/ChatRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/repository/ChatRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/service/ChatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/service/ChatService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notify-Service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Notify-Service/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +71,13 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -140,7 +133,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yml.rabbitmq: Compose Deployment">
+  <component name="RunManager" selected="Spring Boot.ChatServiceApplication">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -268,6 +261,7 @@
     </configuration>
     <list>
       <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose.yml.rabbitmq: Compose Deployment" />
       <item itemvalue="Gradle.SystemServiceApplicationTests" />
       <item itemvalue="JavaScript Debug.index.html" />
       <item itemvalue="Spring Boot.AuthServiceApplication" />
@@ -279,7 +273,6 @@
       <item itemvalue="Spring Boot.SystemServiceApplication" />
       <item itemvalue="Spring Boot.UserServiceApplication" />
       <item itemvalue="Spring Boot.ConfigServiceApplication" />
-      <item itemvalue="Docker.docker-compose.yml.rabbitmq: Compose Deployment" />
     </list>
     <recent_temporary>
       <list>
@@ -327,6 +320,10 @@
       <workItem from="1713340148453" duration="946000" />
       <workItem from="1713438143225" duration="3976000" />
       <workItem from="1713586332038" duration="15262000" />
+      <workItem from="1718018015872" duration="70000" />
+      <workItem from="1718018106490" duration="1636000" />
+      <workItem from="1718187014140" duration="1338000" />
+      <workItem from="1718276774522" duration="7157000" />
     </task>
     <servers />
   </component>

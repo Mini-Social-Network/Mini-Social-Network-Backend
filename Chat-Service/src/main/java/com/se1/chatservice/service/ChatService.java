@@ -106,6 +106,28 @@ public class ChatService {
 		apiResponseEntity.setStatus(1);
 	}
 
+	public List<ChatDto> processGetNewMessages2(String topicId, Date fromDate) {
+		List<Chat> newChatList = chatRepository.findByTopicIdAndCreateAtAfter(topicId, fromDate);
+		return newChatList.stream()
+				.map(chat -> {
+					ChatDto chatDto = new ChatDto();
+					BeanUtils.copyProperties(chat, chatDto);
+					chatDto.setUser(getUSerChat(chat.getUserId()));
+					if (chat.getChatParent() != null) {
+						Chat chatParent = chatRepository.findById(chat.getChatParent()).orElse(null);
+						if (chatParent != null) {
+							ChatDto chatParentDto = new ChatDto();
+							BeanUtils.copyProperties(chatParent, chatParentDto);
+							chatParentDto.setUser(getUSerChat(chatParent.getUserId()));
+							chatDto.setChatParent(chatParentDto);
+						}
+					}
+					return chatDto;
+				})
+				.filter(Objects::nonNull)
+				.collect(Collectors.toList());
+	}
+
 	private ChatDto.User getUSerChat(Long userId) {
 
 		MultiValueMap<String, String> request = new LinkedMultiValueMap<String, String>();
