@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60cb4748-703c-4ed7-a5ff-7076c1e74228" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/payload/GetNewChatRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/model/ChatDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/payload/GetOlderChatRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/controller/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/controller/ChatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se1/authservice/config/AppProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se1/authservice/config/AppProperties.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/controller/ChatExternalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/controller/ChatExternalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/payload/ChatDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/payload/ChatDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/payload/GetNewChatRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/payload/GetNewChatRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/repository/ChatRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/repository/ChatRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/service/ChatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/service/ChatService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notify-Service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Notify-Service/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +121,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../vhs/Movie_Web/Movie_Web" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -134,17 +135,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.ChatServiceApplication">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SystemServiceApplicationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -323,7 +313,10 @@
       <workItem from="1718018015872" duration="70000" />
       <workItem from="1718018106490" duration="1636000" />
       <workItem from="1718187014140" duration="1338000" />
-      <workItem from="1718276774522" duration="7157000" />
+      <workItem from="1718276774522" duration="8459000" />
+      <workItem from="1718365381330" duration="5346000" />
+      <workItem from="1718425080927" duration="397000" />
+      <workItem from="1718714028102" duration="588000" />
     </task>
     <servers />
   </component>

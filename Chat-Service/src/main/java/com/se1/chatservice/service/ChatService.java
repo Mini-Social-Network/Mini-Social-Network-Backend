@@ -1,11 +1,14 @@
 package com.se1.chatservice.service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+import com.se1.chatservice.model.ChatDTO;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
@@ -144,6 +147,21 @@ public class ChatService {
 		return userChatParent;
 	}
 
+	public List<ChatDTO> processGetOlderMessages(String topicId, String toDate) {
+		try {
+			// Parse the toDate string into a Date object
+			Date date = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ").parse(toDate);
+
+			// Fetch older messages from the repository
+			List<ChatDTO> olderMessages = chatRepository.findOlderMessages(topicId, date);
+
+			// Return the list of older messages
+			return olderMessages;
+		} catch (ParseException e) {
+			throw new RuntimeException("Invalid date format", e);
+		}
+	}
+
 	public void processUpdateStatus(List<Long> chatIds, ApiResponseEntity apiResponseEntity) throws Exception {
 		List<Integer> update = chatRepository.updateStatusChat(chatIds);
 		if (update != null && update.size() > 0) {
@@ -160,7 +178,7 @@ public class ChatService {
 		if(Objects.isNull(contactDto)) {
 			throw new Exception("Hành động không cho phép");
 		}
-		
+
 		List<com.se1.chatservice.domain.db.dto.ChatDto> listChat = rChatMapper.getAllChat(request.getTopicId(),
 				request.getLimit(), request.getOffset(), userDetail.getId());
 		Collections.reverse(listChat);
@@ -184,5 +202,45 @@ public class ChatService {
 		apiResponseEntity.setErrorList(null);
 		apiResponseEntity.setStatus(1);
 	}
+
+//	public void processGetAllChat(GetAllChatRequest request, UserDetail userDetail, ApiResponseEntity apiResponseEntity, Integer number) throws Exception {
+//		// Validate if the user has permission for the requested topic
+//		ContactDto contactDto = contactService.findContactByUserIdAndTopicId(request.getTopicId(), userDetail.getId());
+//		if (Objects.isNull(contactDto)) {
+//			throw new Exception("Action not allowed");
+//		}
+//
+//		request.setLimit(number);
+//		request.setOffset(0);
+//		// Fetch chats from the repository, ordered by createAt descending and limited by limit
+//		List<com.se1.chatservice.domain.db.dto.ChatDto> listChat = rChatMapper.getAllChat(request.getTopicId(),
+//				request.getLimit(), request.getOffset(), userDetail.getId());
+//
+//		// Convert the fetched chats into ChatDto format
+//		List<ChatDto> listChatResponse = listChat.stream().map(c -> {
+//			ChatDto chatDto = new ChatDto();
+//			BeanUtils.copyProperties(c, chatDto);
+//			chatDto.setIsFile(c.getIsFile().equals(1));
+//			chatDto.setUser(getUSerChat(c.getUserId()));
+//
+//			// Fetch and set parent chat details if available
+//			if (c.getChatParent() != null) {
+//				Chat chatParent = chatRepository.findById(c.getChatParent()).orElse(null);
+//				if (chatParent != null) {
+//					ChatDto chatParentDto = new ChatDto();
+//					BeanUtils.copyProperties(chatParent, chatParentDto);
+//					chatParentDto.setUser(getUSerChat(chatParent.getUserId()));
+//					chatDto.setChatParent(chatParentDto);
+//				}
+//			}
+//
+//			return chatDto;
+//		}).filter(res -> res.getUser() != null).collect(Collectors.toList());
+//
+//		// Set the response data and status
+//		apiResponseEntity.setData(listChatResponse);
+//		apiResponseEntity.setErrorList(null);
+//		apiResponseEntity.setStatus(1);
+//	}
 
 }

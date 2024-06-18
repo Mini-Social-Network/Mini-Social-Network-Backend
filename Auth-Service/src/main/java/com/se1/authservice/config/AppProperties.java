@@ -1,6 +1,5 @@
 package com.se1.authservice.config;
 
-
 import java.util.ArrayList;
 import java.util.List;
 

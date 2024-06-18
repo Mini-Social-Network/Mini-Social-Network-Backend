@@ -2,6 +2,7 @@ package com.se1.chatservice.controller;
 
 import java.util.List;
 
+import com.se1.chatservice.model.ChatDTO;
 import com.se1.chatservice.payload.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -50,6 +51,22 @@ public class ChatExternalController {
 		try {
 			List<ChatDto> newMessages = chatService.processGetNewMessages2(request.getTopicId(), request.getFromDate());
 			apiResponseEntity.setData(newMessages.get(0));
+			apiResponseEntity.setStatus(1);
+		} catch (Exception e) {
+			apiResponseEntity.setData(false);
+			apiResponseEntity.setErrorList(List.of(e.getMessage()));
+			apiResponseEntity.setStatus(0);
+		}
+		return ResponseEntity.ok(apiResponseEntity);
+	}
+
+	@PostMapping("/getOlderChat")
+	public ResponseEntity<?> getOlderChat(@RequestHeader("user_detail") String userDetailHeader, @RequestBody GetOlderChatRequest request) throws JsonMappingException, JsonProcessingException {
+		UserDetail userDetail = mapper.readValue(userDetailHeader, UserDetail.class);
+
+		try {
+			List<ChatDTO> olderMessages = chatService.processGetOlderMessages(request.getTopicId(), request.getToDate());
+			apiResponseEntity.setData(olderMessages);
 			apiResponseEntity.setStatus(1);
 		} catch (Exception e) {
 			apiResponseEntity.setData(false);

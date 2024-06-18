@@ -2,10 +2,9 @@ package com.se1.chatservice.payload;
 
 import lombok.Data;
 
-import java.util.Date;
-
 @Data
-public class GetNewChatRequest {
+public class GetOlderChatRequest {
     private String topicId;
-    private Date fromDate;
+    private String toDate;
 }
+
