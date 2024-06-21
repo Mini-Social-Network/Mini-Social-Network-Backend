@@ -51,7 +51,7 @@ pipeline {
                 script {
                     def serviceName = 'auth-service'
                     def dockerImage = "mini-social-network/${serviceName}:${env.VERSION}"
-                    dir('ApiGateway-Service') {
+                    dir('Auth-Service') {
                         docker.build(dockerImage, "--build-arg BUILD_ID=${env.BUILD_ID} .")
                         docker.withRegistry('', "${DOCKER_CREDENTIALS_ID}") {
                             docker.image(dockerImage).push()
