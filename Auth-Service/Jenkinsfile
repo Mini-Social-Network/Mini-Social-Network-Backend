@@ -14,24 +14,26 @@ pipeline {
         }
 
         stage('Read and Increment Version') {
-            steps {
-                script {
-                    if (BRANCH_NAME == 'origin/dev') {
-                        def versionFile = readFile 'version-dev.txt'
-                        def (major, minor) = versionFile.trim().split('\\.').collect { it.toInteger() }
-                        minor += 1
-                        env.VERSION = "${major}.${minor}"
-                        writeFile file: 'version-dev.txt', text: "${major}.${minor}"
-                    } else if (BRANCH_NAME == 'origin/main') {
-                        def versionFile = readFile 'version-main.txt'
-                        def (major, minor) = versionFile.trim().split('\\.').collect { it.toInteger() }
-                        major += 1
-                        minor = 0
-                        env.VERSION = "${major}.${minor}"
-                        writeFile file: 'version-main.txt', text: "${major}.${minor}"
-                    } else {
-                        error "Unsupported branch: ${BRANCH_NAME}"
-                    }
+                    steps {
+                        script {
+                            def BRANCH_NAME = env.GIT_BRANCH ?: 'dev' // Default to 'dev' if env.GIT_BRANCH is null
+
+                            if (BRANCH_NAME.startsWith('dev')) {
+                                def versionFile = readFile 'version-dev.txt'
+                                def (major, minor) = versionFile.trim().split('\\.').collect { it.toInteger() }
+                                minor += 1
+                                env.VERSION = "${major}.${minor}"
+                                writeFile file: 'version-dev.txt', text: "${major}.${minor}"
+                            } else if (BRANCH_NAME.startsWith('main')) {
+                                def versionFile = readFile 'version-main.txt'
+                                def (major, minor) = versionFile.trim().split('\\.').collect { it.toInteger() }
+                                major += 1
+                                minor = 0
+                                env.VERSION = "${major}.${minor}"
+                                writeFile file: 'version-main.txt', text: "${major}.${minor}"
+                            } else {
+                                error "Unsupported branch: ${BRANCH_NAME}"
+                            }
 
                     sh '''
                     git config user.name "vhs24"
