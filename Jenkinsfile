@@ -90,14 +90,22 @@ def buildAndPushDockerImage(serviceName) {
             stage('Build Docker Image') {
                 steps {
                     script {
-                        def dockerImage = "mini-social-network/${serviceName}:${env.VERSION}"
-                        def serviceContext = "${serviceName.replace('-service', '')}-Service"
-                        dir(serviceContext) {
-                            docker.build(dockerImage, "--build-arg BUILD_ID=${env.BUILD_ID} .")
-                            docker.withRegistry('', "${DOCKER_CREDENTIALS_ID}") {
-                                docker.image(dockerImage).push()
-                                docker.image(dockerImage).push('latest')
-                            }
+//                         def dockerImage = "mini-social-network/${serviceName}:${env.VERSION}"
+//                         def serviceContext = "${serviceName.replace('-service', '')}-Service"
+//                         dir(serviceContext) {
+//                             docker.build(dockerImage, "--build-arg BUILD_ID=${env.BUILD_ID} .")
+//                             docker.withRegistry('', "${DOCKER_CREDENTIALS_ID}") {
+//                                 docker.image(dockerImage).push()
+//                                 docker.image(dockerImage).push('latest')
+//                             }
+                         def dockerImage = "mini-social-network/${serviceName}:v1"
+                                                def serviceContext = "${serviceName.replace('-service', '')}-Service"
+                                                dir(serviceContext) {
+                                                    docker.build(dockerImage, "--build-arg BUILD_ID=${env.BUILD_ID} .")
+                                                    docker.withRegistry('', "${DOCKER_CREDENTIALS_ID}") {
+                                                        docker.image(dockerImage).push()
+                                                        docker.image(dockerImage).push('latest')
+                                                    }
                         }
                     }
                 }
