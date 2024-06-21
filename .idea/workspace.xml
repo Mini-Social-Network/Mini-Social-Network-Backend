@@ -5,15 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60cb4748-703c-4ed7-a5ff-7076c1e74228" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/model/ChatDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/payload/GetOlderChatRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ApiGateway-Service/Jenkinsfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Auth-Service/Jenkinsfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chat-Service/Jenkinsfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Config-Service/Jenkinsfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eureka-Service/Jenkinsfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Notify-Service/Jenkinsfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Post-Service/Jenkinsfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/System-Service/Jenkinsfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User-Service/Jenkinsfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/version-dev.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/version-main.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se1/authservice/config/AppProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth-Service/src/main/java/com/se1/authservice/config/AppProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/controller/ChatExternalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/controller/ChatExternalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/payload/GetNewChatRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/payload/GetNewChatRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/repository/ChatRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/repository/ChatRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/service/ChatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chat-Service/src/main/java/com/se1/chatservice/service/ChatService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/run/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,6 +140,17 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.ChatServiceApplication">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SystemServiceApplicationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -316,7 +332,10 @@
       <workItem from="1718276774522" duration="8459000" />
       <workItem from="1718365381330" duration="5346000" />
       <workItem from="1718425080927" duration="397000" />
-      <workItem from="1718714028102" duration="588000" />
+      <workItem from="1718714028102" duration="3576000" />
+      <workItem from="1718790344415" duration="636000" />
+      <workItem from="1718798420346" duration="1777000" />
+      <workItem from="1718973719944" duration="7323000" />
     </task>
     <servers />
   </component>
