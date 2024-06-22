@@ -24,7 +24,7 @@ jobs:
 
       - name: Build each service with Gradle and create Docker images
         run: |
-          services=("apigateway-service" "eureka-service" "auth-service" "user-service" "system-service" "chat-service" "post-service" "notify-service" "config-service")
+          services=("ApiGateway-Service" "Eureka-Service" "Auth-Service" "User-Service" "System-Service" "Chat-Service" "Post-Service" "Notify-Service" "Config-Service")
           for service in "${services[@]}"; do
                       if [ -d "$service" ]; then
                         echo "Building $service with Gradle"
