@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   apigateway-service:
-    image: mini-social-network/apigateway-service:${TAG}
+    image: vhs24/apigateway-service:${TAG}
     container_name: apigateway-service
     ports:
       - "8080:8080"
@@ -16,7 +16,7 @@ services:
         core.git.sha: ${BUILD_ID:-local}
 
   auth-service:
-    image: mini-social-network/auth-service:${TAG}
+    image: vhs24/auth-service:${TAG}
     container_name: auth-service
     ports:
       - "8089:8089"
@@ -32,7 +32,7 @@ services:
       # dockerfile: ../Auth-Service/Dockerfile
 
   chat-service:
-    image: mini-social-network/chat-service:${TAG}
+    image: vhs24/chat-service:${TAG}
     container_name: chat-service
     ports:
       - "8084:8084"
@@ -47,7 +47,7 @@ services:
         core.git.sha: ${BUILD_ID:-local}
 
   config-service:
-    image: mini-social-network/config-service:${TAG}
+    image: vhs24/config-service:${TAG}
     container_name: config-service
     ports:
       - "8071:8071"
@@ -62,7 +62,7 @@ services:
         core.git.sha: ${BUILD_ID:-local}
 
   eureka-service:
-    image: mini-social-network/eureka-service:${TAG}
+    image: vhs24/eureka-service:${TAG}
     container_name: eureka-service
     ports:
       - "8761:8761"
@@ -77,7 +77,7 @@ services:
         core.git.sha: ${BUILD_ID:-local}
       
   notify-service:
-    image: mini-social-network/notify-service:${TAG}
+    image: vhs24/notify-service:${TAG}
     container_name: notify-service
     ports:
       - "8085:8085"
@@ -92,7 +92,7 @@ services:
         core.git.sha: ${BUILD_ID:-local}
       
   post-service:
-    image: mini-social-network/post-service:${TAG}
+    image: vhs24/post-service:${TAG}
     container_name: post-service
     ports:
       - "8082:8082"
@@ -107,7 +107,7 @@ services:
         core.git.sha: ${BUILD_ID:-local}
 
   system-service:
-    image: mini-social-network/system-service:${TAG}
+    image: vhs24/system-service:${TAG}
     container_name: system-service
     ports:
       - "8081:8081"
@@ -122,7 +122,7 @@ services:
         core.git.sha: ${BUILD_ID:-local}
 
   user-service:
-    image: mini-social-network/user-service:${TAG}
+    image: vhs24/user-service:${TAG}
     container_name: user-service
     ports:
       - "8088:8088"
