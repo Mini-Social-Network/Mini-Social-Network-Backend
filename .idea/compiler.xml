@@ -38,5 +38,10 @@
         <module name="Chat-Service.main" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Notify-Service.test" target="11" />
+      <module name="System-Service.test" target="11" />
+      <module name="User-Service.test" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

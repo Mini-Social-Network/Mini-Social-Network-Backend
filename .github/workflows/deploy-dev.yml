@@ -51,7 +51,7 @@ jobs:
 
       - name: Build and Push Docker Images
         run: |
-          services=("apigateway-service" "eureka-service" "auth-service" "user-service" "system-service" "chat-service" "post-service" "notify-service" "config-service")
+          services=("ApiGateway-Service" "Eureka-Service" "Auth-Service" "User-Service" "Chat-Service" "Post-Service" "Notify-Service" "Config-Service" "System-Service")
           for service in "${services[@]}"; do
             echo "Building Docker image for $service"
             docker build -t ${{ secrets.DOCKER_USERNAME }}/$service:${{ github.sha }} ./$service
@@ -75,7 +75,7 @@ jobs:
 
       - name: Pull Docker Images
         run: |
-          services=("apigateway-service" "eureka-service" "auth-service" "user-service" "system-service" "chat-service" "post-service" "notify-service" "config-service")
+          services=("ApiGateway-Service" "Eureka-Service" "Auth-Service" "User-Service" "Chat-Service" "Post-Service" "Notify-Service" "Config-Service" "System-Service")
           for service in "${services[@]}"; do
             echo "Pulling Docker image for $service"
             docker pull ${{ secrets.DOCKER_USERNAME }}/$service:${{ github.sha }}
