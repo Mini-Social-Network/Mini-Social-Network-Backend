@@ -52,11 +52,11 @@ jobs:
       - name: Build and Push Docker Images
         run: |
           declare -a services=([apigateway-service]:apigateway-service [eureka-service]:eureka-service [auth-service]:auth-service [user-service]:User-Service [system-service]:SystemService [chat-service]:Chat-Service [post-service]:Post-Service [notify-service]:Notify-Service [config-service]:Config-Service)
-          for servicekey in "${!services[@]}" and servicevalue in "${services[@]}" ; do
-            echo "Building Docker image for $servicekey"
-            docker build -t ${{ secrets.DOCKER_USERNAME }}/$servicekey:${{ github.sha }} ./$servicevalue
-            echo "Pushing Docker image for $servicekey"
-            docker push ${{ secrets.DOCKER_USERNAME }}/$servicekey:${{ github.sha }}
+          for service in "${!services[@]}" ; do
+            echo "Building Docker image for $service"
+            docker build -t ${{ secrets.DOCKER_USERNAME }}/$service:${{ github.sha }} ./$service[$service]
+            echo "Pushing Docker image for $service"
+            docker push ${{ secrets.DOCKER_USERNAME }}/$service:${{ github.sha }}
           done
 
   deploy:
