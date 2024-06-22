@@ -22,8 +22,10 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Grant execute permission for gradlew
-          run: chmod +x gradlew
+      - name: Set up environment by docker-compose
+          run: |
+            docker-compose down
+            docker-compose up -d
 
       - name: Build each service with Gradle and create Docker images
         run: |
@@ -32,6 +34,7 @@ jobs:
                       if [ -d "$service" ]; then
                         echo "Building $service with Gradle"
                         cd $service
+                        chmod +x gradlew
                         ./gradlew build
                         cd ..
                       else
@@ -80,6 +83,7 @@ jobs:
 
       - name: Deploy with Docker Compose
         run: |
+          cd run
           export TAG=${{ github.sha }}
           docker-compose down
           docker-compose up -d

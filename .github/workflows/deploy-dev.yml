@@ -22,6 +22,11 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Set up environment by docker-compose
+        run: |
+          docker-compose down
+          docker-compose up -d
+
       - name: Build each service with Gradle and create Docker images
         run: |
           services=("ApiGateway-Service" "Eureka-Service" "Auth-Service" "User-Service" "System-Service" "Chat-Service" "Post-Service" "Notify-Service" "Config-Service")
@@ -78,6 +83,7 @@ jobs:
 
       - name: Deploy with Docker Compose
         run: |
+          cd run
           export TAG=${{ github.sha }}
           docker-compose down
           docker-compose up -d
