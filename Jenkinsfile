@@ -1,121 +1,118 @@
 pipeline {
     agent any
-
     environment {
-        DOCKER_CREDENTIALS_ID = 'docker-hub' // ID of Docker Hub credentials in Jenkins
+        DOCKER_USERNAME = credentials('docker-username')
+        DOCKER_PASSWORD = credentials('docker-password')
     }
-
     stages {
-        stage('Checkout') {
+        stage('Checkout repository') {
             steps {
                 checkout scm
             }
         }
-
-//         stage('Read and Increment Version') {
-//                     steps {
-//                         script {
-//                             def BRANCH_NAME = env.GIT_BRANCH ?: 'dev' // Default to 'dev' if env.GIT_BRANCH is null
-//
-//                             if (BRANCH_NAME.startsWith('dev')) {
-//                                 def versionFile = readFile 'version-dev.txt'
-//                                 def (major, minor) = versionFile.trim().split('\\.').collect { it.toInteger() }
-//                                 minor += 1
-//                                 env.VERSION = "${major}.${minor}"
-//                                 writeFile file: 'version-dev.txt', text: "${major}.${minor}"
-//                             } else if (BRANCH_NAME.startsWith('main')) {
-//                                 def versionFile = readFile 'version-main.txt'
-//                                 def (major, minor) = versionFile.trim().split('\\.').collect { it.toInteger() }
-//                                 major += 1
-//                                 minor = 0
-//                                 env.VERSION = "${major}.${minor}"
-//                                 writeFile file: 'version-main.txt', text: "${major}.${minor}"
-//                             } else {
-//                                 error "Unsupported branch: ${BRANCH_NAME}"
-//                             }
-//
-//                     sh '''
-//                     git config user.name "vhs24"
-//                     git config user.email "voson1024@gmail.com"
-//                     git add version-*.txt
-//                     git commit -m "Increment version to ${VERSION}"
-//                     git push origin ${BRANCH_NAME.replace('origin/', '')}
-//                     '''
-//                 }
-//             }
-//         }
-
-        stage('Build and Push Docker Images') {
+        stage('Set up JDK 17') {
             steps {
-                script {
-                    buildAndPushDockerImage('apigateway-service')
-                    buildAndPushDockerImage('auth-service')
-                    buildAndPushDockerImage('chat-service')
-                    buildAndPushDockerImage('config-service')
-                    buildAndPushDockerImage('eureka-service')
-                    buildAndPushDockerImage('notify-service')
-                    buildAndPushDockerImage('post-service')
-                    buildAndPushDockerImage('system-service')
-                    buildAndPushDockerImage('user-service')
-                }
+                sh 'sudo apt-get update && sudo apt-get install -y openjdk-17-jdk'
+                sh 'java -version'
             }
         }
-
-        stage('Deploy with Docker Compose') {
+        stage('Set up environment by docker-compose') {
             steps {
-                script {
-                    // Set VERSION environment variable for docker-compose
-                    writeFile file: '.env', text: "VERSION=${VERSION}"
-
-                    sh "docker-compose down"
-                    sh "docker-compose pull"
-                    sh "docker-compose up -d"
-                }
+                sh '''
+                docker-compose down
+                docker-compose up -d
+                '''
             }
         }
-    }
-
-    post {
-        always {
-            cleanWs() // Clean workspace after the build
-        }
-    }
-}
-
-def buildAndPushDockerImage(serviceName) {
-    pipeline {
-        agent any
-
-        stages {
-            stage('Build Docker Image') {
-                steps {
-                    script {
-//                         def dockerImage = "mini-social-network/${serviceName}:${env.VERSION}"
-//                         def serviceContext = "${serviceName.replace('-service', '')}-Service"
-//                         dir(serviceContext) {
-//                             docker.build(dockerImage, "--build-arg BUILD_ID=${env.BUILD_ID} .")
-//                             docker.withRegistry('', "${DOCKER_CREDENTIALS_ID}") {
-//                                 docker.image(dockerImage).push()
-//                                 docker.image(dockerImage).push('latest')
-//                             }
-                         def dockerImage = "mini-social-network/${serviceName}:v1"
-                                                def serviceContext = "${serviceName.replace('-service', '')}-Service"
-                                                dir(serviceContext) {
-                                                    docker.build(dockerImage, "--build-arg BUILD_ID=${env.BUILD_ID} .")
-                                                    docker.withRegistry('', "${DOCKER_CREDENTIALS_ID}") {
-                                                        docker.image(dockerImage).push()
-                                                        docker.image(dockerImage).push('latest')
-                                                    }
+        stage('Build each service with Gradle and create Docker images') {
+            steps {
+                script {
+                    def services = ["ApiGateway-Service", "Eureka-Service", "Auth-Service", "User-Service", "Chat-Service", "Post-Service", "Notify-Service", "Config-Service", "System-Service"]
+                    services.each { service ->
+                        if (fileExists(service)) {
+                            echo "Building ${service} with Gradle"
+                            dir(service) {
+                                sh 'chmod +x gradlew'
+                                sh './gradlew build'
+                            }
+                        } else {
+                            error "Directory ${service} does not exist"
                         }
                     }
                 }
             }
         }
-
-        post {
-            always {
-                cleanWs()
+        stage('Log in to Docker Hub') {
+            steps {
+                sh '''
+                echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+                '''
             }
+        }
+        stage('Build and Push Docker Images') {
+            steps {
+                script {
+                    def services = [
+                        'apigateway-service': 'ApiGateway-Service',
+                        'eureka-service': 'Eureka-Service',
+                        'auth-service': 'Auth-Service',
+                        'user-service': 'User-Service',
+                        'system-service': 'System-Service',
+                        'chat-service': 'Chat-Service',
+                        'post-service': 'Post-Service',
+                        'notify-service': 'Notify-Service',
+                        'config-service': 'Config-Service'
+                    ]
+                    def commitId = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
+                    services.each { key, value ->
+                        echo "Building Docker image for ${value}"
+                        sh "docker build -t ${DOCKER_USERNAME}/${key}:${commitId} ./${value}"
+                        echo "Pushing Docker image for ${key}"
+                        sh "docker push ${DOCKER_USERNAME}/${key}:${commitId}"
+                    }
+                }
+            }
+        }
+        stage('Pull Docker Images') {
+            steps {
+                script {
+                    def services = [
+                        'apigateway-service',
+                        'eureka-service',
+                        'auth-service',
+                        'user-service',
+                        'system-service',
+                        'chat-service',
+                        'post-service',
+                        'notify-service',
+                        'config-service'
+                    ]
+                    def commitId = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
+                    services.each { service ->
+                        echo "Pulling Docker image for ${service}"
+                        sh "docker pull ${DOCKER_USERNAME}/${service}:${commitId}"
+                    }
+                }
+            }
+        }
+        stage('Deploy with Docker Compose') {
+            steps {
+                script {
+                    dir('run') {
+                        def commitId = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
+                        sh '''
+                        export TAG=${commitId}
+                        docker-compose down
+                        docker-compose up -d
+                        '''
+                    }
+                }
+            }
+        }
+    }
+    post {
+        always {
+            sh 'docker-compose down'
         }
     }
 }

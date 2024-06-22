@@ -1,4 +1,4 @@
-name: CI/CD Pipeline branch main
+name: CI/CD Pipeline branch dev
 
 on:
   push:
@@ -23,9 +23,9 @@ jobs:
           java-version: '17'
 
       - name: Set up environment by docker-compose
-          run: |
-            docker-compose down
-            docker-compose up -d
+        run: |
+          docker-compose down
+          docker-compose up -d
 
       - name: Build each service with Gradle and create Docker images
         run: |
@@ -51,10 +51,10 @@ jobs:
 
       - name: Build and Push Docker Images
         run: |
-          services=("apigateway-service" "eureka-service" "auth-service" "user-service" "system-service" "chat-service" "post-service" "notify-service" "config-service")
-          for service in "${services[@]}"; do
-            echo "Building Docker image for $service"
-            docker build -t ${{ secrets.DOCKER_USERNAME }}/$service:${{ github.sha }} ./$service
+          declare -A services=([apigateway-service]=ApiGateway-Service [eureka-service]=Eureka-Service [auth-service]=Auth-Service [user-service]=User-Service [system-service]=System-Service [chat-service]=Chat-Service [post-service]=Post-Service [notify-service]=Notify-Service [config-service]=Config-Service)
+          for service in "${!services[@]}" ; do
+            echo "Building Docker image for ${services[$service]}"
+            docker build -t ${{ secrets.DOCKER_USERNAME }}/$service:${{ github.sha }} ./${services[$service]}
             echo "Pushing Docker image for $service"
             docker push ${{ secrets.DOCKER_USERNAME }}/$service:${{ github.sha }}
           done
