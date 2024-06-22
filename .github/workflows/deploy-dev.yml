@@ -26,11 +26,16 @@ jobs:
         run: |
           services=("apigateway-service" "eureka-service" "auth-service" "user-service" "system-service" "chat-service" "post-service" "notify-service" "config-service")
           for service in "${services[@]}"; do
-            echo "Building $service with Gradle"
-            cd $service
-            ./gradlew build
-            cd ..
-          done
+                      if [ -d "$service" ]; then
+                        echo "Building $service with Gradle"
+                        cd $service
+                        ./gradlew build
+                        cd ..
+                      else
+                        echo "Directory $service does not exist"
+                        exit 1
+                      fi
+                    done
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
