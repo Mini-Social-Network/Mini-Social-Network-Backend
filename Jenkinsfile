@@ -1,8 +1,7 @@
 pipeline {
     agent any
     environment {
-        DOCKER_USERNAME = credentials('docker-username')
-        DOCKER_PASSWORD = credentials('docker-password')
+        DOCKERHUB_CREDENTIALS = credentials('docker-hub')
     }
     stages {
         stage('Checkout repository') {
@@ -10,15 +9,12 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Set up JDK 17') {
-            steps {
-                sh 'sudo apt-get update && sudo apt-get install -y openjdk-17-jdk'
-                sh 'java -version'
-            }
-        }
         stage('Set up environment by docker-compose') {
             steps {
-                sh '''
+                bat '''
+               @echo off
+                FOR /f "tokens=*" %%i IN ('docker ps -aq') DO docker rm %%i
+                FOR /f "tokens=*" %%i IN ('docker images --format "{{.ID}}"') DO docker rmi %%i
                 docker-compose down
                 docker-compose up -d
                 '''
@@ -32,8 +28,8 @@ pipeline {
                         if (fileExists(service)) {
                             echo "Building ${service} with Gradle"
                             dir(service) {
-                                sh 'chmod +x gradlew'
-                                sh './gradlew build'
+                                //bat 'chmod +x gradlew'
+                                bat './gradlew build'
                             }
                         } else {
                             error "Directory ${service} does not exist"
@@ -44,8 +40,9 @@ pipeline {
         }
         stage('Log in to Docker Hub') {
             steps {
-                sh '''
-                echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+                bat '''
+                docker logout
+                echo $DOCKERHUB_CREDENTIALS_PSW | docker login --username $DOCKERHUB_CREDENTIALS_USR --password-stdin
                 '''
             }
         }
@@ -66,9 +63,9 @@ pipeline {
                     def commitId = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
                     services.each { key, value ->
                         echo "Building Docker image for ${value}"
-                        sh "docker build -t ${DOCKER_USERNAME}/${key}:${commitId} ./${value}"
+                        bat "docker build -t ${DOCKER_USERNAME}/${key}:${commitId} ./${value}"
                         echo "Pushing Docker image for ${key}"
-                        sh "docker push ${DOCKER_USERNAME}/${key}:${commitId}"
+                        bat "docker push ${DOCKER_USERNAME}/${key}:${commitId}"
                     }
                 }
             }
@@ -90,7 +87,7 @@ pipeline {
                     def commitId = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
                     services.each { service ->
                         echo "Pulling Docker image for ${service}"
-                        sh "docker pull ${DOCKER_USERNAME}/${service}:${commitId}"
+                        bat "docker pull ${DOCKER_USERNAME}/${service}:${commitId}"
                     }
                 }
             }
@@ -100,7 +97,7 @@ pipeline {
                 script {
                     dir('run') {
                         def commitId = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
-                        sh '''
+                        bat '''
                         export TAG=${commitId}
                         docker-compose down
                         docker-compose up -d

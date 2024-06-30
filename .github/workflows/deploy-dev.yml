@@ -87,3 +87,7 @@ jobs:
           export TAG=${{ github.sha }}
           docker-compose down
           docker-compose up -d
+
+      - name: Deploy to Kubernetes
+        run: |
+          helm upgrade app helm/app/ --install --namespace mini-social-network-backend --reset-values --values=helm/env_values/dev.yaml --set ingress.domainSuffix=minisocialnetwork.com --set eurekaDesc.image=vhs24/eureka-service:${{ github.sha }} --set apigatewayDesc.image=vhs24/apigateway-service:${{ github.sha }} --set authDesc.image=vhs24/auth-service:${{ github.sha }} --set chatDesc.image=vhs24/chat-service:${{ github.sha }} --set postDesc.image=vhs24/post-service:${{ github.sha }} --set notifyDesc.image=vhs24/notify-service:${{ github.sha }} --set systemDesc.image=vhs24/system-service:${{ github.sha }} --set userDesc.image=vhs24/user-service:${{ github.sha }} --set-string 'mysql.address=mysql://localhost:3306/db04?ssl-mode=REQUIRED' --set-string mysql.user=root --set-string mysql.pass='root' --set-string redis.user=default --set-string redis.pass='test'

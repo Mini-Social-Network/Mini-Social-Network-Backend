@@ -1,0 +1,27 @@
+eurekaDesc:
+  replicaCount: 1
+
+authDesc:
+  coreProfiles: backend_default,backend_dev,k8s
+  coreDbConfigProfiles: root_user,apps_default,services_default
+  replicaCount: 1
+
+apigatewayDesc:
+  coreProfiles: backend_default,backend_dev,k8s
+  coreDbConfigProfiles: roles_system_default,roles_support_default,root_user,apps_default,services_default
+  replicaCount: 1
+
+chatDesc:
+  replicaCount: 1
+
+postDesc:
+  replicaCount: 1
+
+notifyDesc:
+  replicaCount: 1
+
+systemDesc:
+  replicaCount: 1
+
+userDesc:
+  replicaCount: 1

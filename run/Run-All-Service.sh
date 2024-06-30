@@ -1,9 +1,0 @@
-sh ApiGateway-Service.sh
-sh Auth-Service.sh
-sh Chat-Service.sh
-sh Config-Service.sh
-sh Eureka-Service.sh
-sh Notify-Service.sh
-sh Post-Service.sh
-sh System-Service.sh
-sh User-Service.sh

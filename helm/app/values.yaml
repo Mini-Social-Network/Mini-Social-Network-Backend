@@ -1,0 +1,120 @@
+# Default values for app.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# partner: <partner>
+# env: <env>
+
+image: {}
+
+eurekaDesc:
+  image: vhs24/eureka-service:eda699d4dc227cd636eb33968eb4e3bf354b6389
+
+authDesc:
+  image: vhs24/auth-service:eda699d4dc227cd636eb33968eb4e3bf354b6389
+  replicaCount: 1
+  pullPolicy: Always
+  serviceType: ClusterIP
+  # coreProfiles: <profiles>
+  # coreDbConfigProfiles: <profiles>
+  resources:
+    requests:
+      # max usage on aon-int2 (Dec 19 - Jan 20): ~41Mi
+      memory: 64Mi
+
+apigatewayDesc:
+  image: vhs24/apigateway-service:eda699d4dc227cd636eb33968eb4e3bf354b6389
+  replicaCount: 1
+  pullPolicy: Always
+  serviceType: LoadBalancer
+  # coreProfiles: <profiles>
+  # coreDbConfigProfiles: <profiles>
+  resources:
+    requests:
+      # max usage on aon-int2 (Dec 19 - Jan 20): ~206Mi
+      memory: 256Mi
+
+chatDesc:
+  image: vhs24/chat-service:eda699d4dc227cd636eb33968eb4e3bf354b6389
+  replicaCount: 1
+  pullPolicy: Always
+  serviceType: ClusterIP
+  basicAuth: true
+  # coreProfiles: <profiles>
+  resources:
+    requests:
+      # max usage on aon-int2 (Dec 19 - Jan 20): ~3Mi
+      memory: 64Mi
+
+postDesc:
+  image: vhs24/post-service:eda699d4dc227cd636eb33968eb4e3bf354b6389
+  replicaCount: 1
+  pullPolicy: Always
+  serviceType: ClusterIP
+  basicAuth: true
+  # coreProfiles: <profiles>
+  resources:
+    requests:
+      # max usage on aon-int2 (Dec 19 - Jan 20): ~3Mi
+      memory: 64Mi
+
+notifyDesc:
+  image: vhs24/notify-service:eda699d4dc227cd636eb33968eb4e3bf354b6389
+  replicaCount: 1
+  minReadySeconds: 3
+  pullPolicy: Always
+  serviceType: ClusterIP
+  # coreProfiles: <profiles>
+  resources:
+    requests:
+      # max usage on aon-int2 (Dec 19 - Jan 20): ~160Mi
+      memory: 256Mi
+
+systemDesc:
+  image: vhs24/system-service:eda699d4dc227cd636eb33968eb4e3bf354b6389
+  replicaCount: 1
+  pullPolicy: Always
+  serviceType: ClusterIP
+  basicAuth: true
+  # coreProfiles: <profiles>
+  resources:
+    requests:
+      # max usage on aon-int2 (Dec 19 - Jan 20): ~3Mi
+      memory: 256Mi
+
+userDesc:
+  image: vhs24/user-service:eda699d4dc227cd636eb33968eb4e3bf354b6389
+  replicaCount: 1
+  pullPolicy: Always
+  serviceType: ClusterIP
+  basicAuth: true
+  # coreProfiles: <profiles>
+  resources:
+    requests:
+      # max usage on aon-int2 (Dec 19 - Jan 20): ~3Mi
+      memory: 256Mi
+
+ingress:
+  enabled: true
+  domainSuffix: xx
+  secondaryDomainSuffix:
+  frontend: false
+  tls: true
+  letsencrypt: false
+  wafServiceNamespace:
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+mysql:
+  address: mysql://localhost:3306/db04?ssl-mode=REQUIRED
+  user: root
+  pass: root
+
+redis:
+  address: rediss://redis
+  user: default
+  pass: test

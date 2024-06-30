@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-service
+  labels:
+    {{- include "app.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.userDesc.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: user-service
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: user-service
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+    spec:
+      {{- if .Values.image.pullSecrets }}
+      imagePullSecrets:
+        {{- range .Values.image.pullSecrets }}
+        - name: {{ . }}
+        {{- end }}
+      {{- end }}
+      containers:
+        - name: user
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.userDesc.image }}"
+          imagePullPolicy: {{ .Values.userDesc.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 8088
+              protocol: TCP
+          livenessProbe:
+            tcpSocket:
+                port: 8088
+            initialDelaySeconds: 5
+          readinessProbe:
+            tcpSocket:
+              port: 8088
+            initialDelaySeconds: 5
+          env:
+            {{- include "eureka.envVars" . | nindent 10 }}
+            {{- include "redis.envVars" . | nindent 10 }}
+            {{- include "auth.envVars" . | nindent 10 }}
+            {{- include "rabbitmq.envVars" . | nindent 10 }}
+            {{- include "domain" . | nindent 10 }}
+          resources:
+            {{- toYaml .Values.userDesc.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

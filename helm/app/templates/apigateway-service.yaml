@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: apigateway
+  labels:
+    app.kubernetes.io/name: apigateway
+    kubernetes.digitalocean.com/load-balancer-id: "minisocialnetwork-load-balancer"
+    service.beta.kubernetes.io/do-loadbalancer-size-unit: "5"
+    service.beta.kubernetes.io/do-loadbalancer-disable-lets-encrypt-dns-records: "false"
+    service.beta.kubernetes.io/do-loadbalancer-hostname: "api.minisocialnetwork.com"
+    service.beta.kubernetes.io/do-loadbalancer-protocol: "http"
+    service.beta.kubernetes.io/do-loadbalancer-name: "api.minisocialnetwork.com"
+spec:
+  type: {{ .Values.apigatewayDesc.serviceType }}
+  ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: apigateway-service
+  sessionAffinity: None
