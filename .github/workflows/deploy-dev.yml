@@ -81,12 +81,7 @@ jobs:
             docker pull ${{ secrets.DOCKER_USERNAME }}/$service:${{ github.sha }}
           done
 
-      - name: Deploy with Docker Compose
-        run: |
-          cd run
-          export TAG=${{ github.sha }}
-          docker-compose down
-          docker-compose up -d
+      
 
       - name: Deploy to Kubernetes
         run: |
