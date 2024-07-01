@@ -85,6 +85,7 @@ jobs:
         run: |
           sudo systemctl stop mono-xsp4.service || true
           sudo systemctl disable mono-xsp4.service || true
+          sudo kill -9 $(sudo lsof -t -i:8084)
           cd run
           export TAG=${{ github.sha }}
           docker-compose down
