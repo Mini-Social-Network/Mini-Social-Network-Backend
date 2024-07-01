@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60cb4748-703c-4ed7-a5ff-7076c1e74228" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy-dev.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helm/app/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/helm/app/values.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -334,7 +332,7 @@
       <workItem from="1718973719944" duration="27253000" />
       <workItem from="1719123276336" duration="9425000" />
       <workItem from="1719227691192" duration="6662000" />
-      <workItem from="1719666360941" duration="8036000" />
+      <workItem from="1719666360941" duration="8339000" />
     </task>
     <servers />
   </component>

@@ -83,8 +83,8 @@ jobs:
 
       - name: Deploy with Docker Compose
         run: |
-          sudo systemctl stop mono-xsp4.service 
-          sudo systemctl disable mono-xsp4.service
+          sudo systemctl stop mono-xsp4.service || true
+          sudo systemctl disable mono-xsp4.service || true
           cd run
           export TAG=${{ github.sha }}
           docker-compose down
