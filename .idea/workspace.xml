@@ -5,36 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60cb4748-703c-4ed7-a5ff-7076c1e74228" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/helm/app/.helmignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helm/app/Chart.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helm/app/templates/_helpers.tpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helm/app/templates/apigateway-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helm/app/templates/apigateway-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helm/app/templates/auth-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helm/app/templates/auth-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helm/app/templates/chat-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helm/app/templates/chat-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helm/app/templates/eureka-configmap.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helm/app/templates/eureka-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helm/app/templates/eureka-statefulset.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helm/app/templates/notify-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helm/app/templates/notify-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helm/app/templates/post-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helm/app/templates/post-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helm/app/templates/system-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helm/app/templates/system-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helm/app/templates/user-deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helm/app/templates/user-service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helm/app/values.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helm/env_values/dev.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helm/env_values/prod.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run/run-helm.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.github/workflows/deploy-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_06_2024_4_35_CH_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_06_2024_4_35_CH__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/Run-All-Service.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/helm/app/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/helm/app/values.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -361,7 +334,7 @@
       <workItem from="1718973719944" duration="27253000" />
       <workItem from="1719123276336" duration="9425000" />
       <workItem from="1719227691192" duration="6662000" />
-      <workItem from="1719666360941" duration="5195000" />
+      <workItem from="1719666360941" duration="8036000" />
     </task>
     <servers />
   </component>

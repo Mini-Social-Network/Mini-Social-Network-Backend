@@ -115,6 +115,6 @@ mysql:
   pass: root
 
 redis:
-  address: rediss://redis
+  address: rediss://localhost:6379/0?ssl_cert_reqs=CERT_REQUIRED
   user: default
   pass: test

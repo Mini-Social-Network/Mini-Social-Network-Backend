@@ -81,7 +81,14 @@ jobs:
             docker pull ${{ secrets.DOCKER_USERNAME }}/$service:${{ github.sha }}
           done
 
-      
+      - name: Deploy with Docker Compose
+        run: |
+          sudo systemctl stop mono-xsp4.service 
+          sudo systemctl disable mono-xsp4.service
+          cd run
+          export TAG=${{ github.sha }}
+          docker-compose down
+          docker-compose up -d
 
       - name: Deploy to Kubernetes
         run: |
